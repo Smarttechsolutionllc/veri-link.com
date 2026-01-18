@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VeriLink | Passwordless login that users actually finish</title>
+  <meta name="description" content="VeriLink replaces passwords with secure, time-bound magic links and device-aware protections. Built for startups, SaaS, and enterprise." />
+
+  <style>
+    :root{
+      --bg0:#070A0F;
+      --bg1:#0B1020;
+      --card: rgba(255,255,255,0.04);
+      --card2: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.10);
+      --border2: rgba(120,170,255,0.25);
+      --text: rgba(255,255,255,0.90);
+      --muted: rgba(255,255,255,0.66);
+      --muted2: rgba(255,255,255,0.50);
+      --accent: rgba(120,170,255,0.92);
+      --accentSoft: rgba(120,170,255,0.14);
+      --accent2: rgba(170,120,255,0.80);
+      --shadow: 0 18px 70px rgba(0,0,0,0.60);
+      --radius: 18px;
+      --radius2: 22px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(120,170,255,0.12), transparent 55%),
+        radial-gradient(1000px 600px at 85% 20%, rgba(170,120,255,0.10), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+    /* Top nav */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,10,15,0.92), rgba(7,10,15,0.68));
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner{
+      height: 74px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55));
+      opacity: 0.95;
+    }
+    .brand span{
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .nav-links{
+      display:flex;
+      gap: 16px;
+      align-items:center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .nav-links a{
+      padding: 10px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+    .nav-links a:hover{
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.82);
+    }
+
+    .nav-ctas{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      min-width: 220px;
+      justify-content: flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(120,170,255,0.35);
+      background: rgba(120,170,255,0.08);
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(120,170,255,0.22), rgba(120,170,255,0.10));
+      border-color: rgba(120,170,255,0.30);
+    }
+    .btn.primary:hover{
+      border-color: rgba(120,170,255,0.45);
+      background: linear-gradient(180deg, rgba(120,170,255,0.28), rgba(120,170,255,0.12));
+    }
+
+    /* Hero */
+    .hero{
+      padding: 64px 0 26px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+    }
+    .dot{
+      width: 7px; height: 7px;
+      border-radius: 999px;
+      background: rgba(120,170,255,0.85);
+      box-shadow: 0 0 18px rgba(120,170,255,0.45);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    h1{
+      margin: 14px 0 12px;
+      font-size: clamp(30px, 3.6vw, 54px);
+      line-height: 1.06;
+      letter-spacing: -0.8px;
+      font-weight: 650;
+    }
+    .lead{
+      margin: 0;
+      max-width: 56ch;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .hero-actions{
+      margin-top: 18px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    .trust{
+      margin-top: 18px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted2);
+      font-size: 12.5px;
+      align-items:center;
+    }
+    .trust .tag{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    /* Right panel */
+    .panel{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      overflow:hidden;
+      box-shadow: 0 18px 70px rgba(0,0,0,0.55);
+    }
+    .panel-head{
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .panel-title{
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      font-weight: 600;
+    }
+    .panel-badge{
+      font-size: 12px;
+      color: rgba(255,255,255,0.64);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .panel-body{
+      padding: 14px 16px 16px;
+    }
+    .step{
+      display:flex;
+      gap: 12px;
+      padding: 10px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 10px;
+    }
+    .num{
+      width: 30px;
+      height: 30px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(120,170,255,0.28);
+      background: rgba(120,170,255,0.10);
+      color: rgba(255,255,255,0.88);
+      font-weight: 650;
+      font-size: 13px;
+      flex: 0 0 auto;
+    }
+    .step h3{
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.86);
+    }
+    .step p{
+      margin: 4px 0 0;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .code{
+      margin-top: 10px;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.20);
+      color: rgba(255,255,255,0.74);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12.5px;
+      line-height: 1.5;
+      overflow:auto;
+      white-space: pre;
+    }
+
+    /* Sections */
+    section.block{
+      padding: 34px 0;
+    }
+    .section-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+    .section-head h2{
+      margin: 0;
+      font-size: 22px;
+      font-weight: 650;
+      letter-spacing: -0.2px;
+    }
+    .section-head p{
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      padding: 16px;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 220ms ease;
+    }
+    .card:hover{
+      transform: translateY(-2px);
+      border-color: rgba(120,170,255,0.30);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      box-shadow: 0 18px 70px rgba(0,0,0,0.40);
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 650;
+      color: rgba(255,255,255,0.86);
+    }
+    .card p{
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    /* “How it works” */
+    .how{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .how .item{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      padding: 16px;
+    }
+    .how .item .title{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .how .item .title span{
+      font-size: 14px;
+      font-weight: 650;
+      color: rgba(255,255,255,0.86);
+    }
+    .how .item .title em{
+      font-style: normal;
+      font-size: 12px;
+      color: rgba(255,255,255,0.62);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      padding: 5px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .how .item p{
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* Pricing preview */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+    .price-card{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      padding: 16px;
+      display:flex;
+      flex-direction: column;
+      min-height: 260px;
+    }
+    .price-card .topline{
+      display:flex;
+      justify-content: space-between;
+      align-items:flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .price-card .tier{
+      font-size: 13px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      font-weight: 650;
+    }
+    .price-card .cap{
+      font-size: 12px;
+      color: rgba(255,255,255,0.62);
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.18);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .price{
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+      color: rgba(255,255,255,0.90);
+      margin: 2px 0 6px;
+    }
+    .price-sub{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .list{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display:flex;
+      flex-direction: column;
+      gap: 8px;
+      color: rgba(255,255,255,0.78);
+      font-size: 13.2px;
+      line-height: 1.5;
+    }
+    .list li{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .check{
+      width: 18px; height: 18px;
+      border-radius: 7px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(120,170,255,0.28);
+      background: rgba(120,170,255,0.10);
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+    .check svg{ opacity:0.9; }
+    .price-card .actions{
+      margin-top:auto;
+      padding-top: 12px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 60px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted2);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .footer-title{
+      font-size: 13px;
+      font-weight: 650;
+      color: rgba(255,255,255,0.74);
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .footer-links a{
+      display:inline-block;
+      padding: 6px 0;
+      color: rgba(255,255,255,0.62);
+      border-bottom: 1px solid transparent;
+    }
+    .footer-links a:hover{
+      color: rgba(255,255,255,0.84);
+      border-bottom-color: rgba(120,170,255,0.22);
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+      .how{ grid-template-columns: 1fr; }
+      .pricing{ grid-template-columns: 1fr; }
+      .nav-links{ display:none; }
+      .brand{ min-width: auto; }
+      .nav-ctas{ min-width: auto; }
+      .footer-grid{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="VeriLink home">
+          <img
+            alt="VeriLink"
+            decoding="async"
+            src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png"
+          />
+          <span>VeriLink</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#product">Product</a>
+          <a href="#how">How it works</a>
+          <a href="#security">Security</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-ctas">
+          <a class="btn" href="https://app.veri-link.com" target="_blank" rel="noopener">Open demo</a>
+          <a class="btn primary" href="pricing.html">View pricing</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="pill"><span class="dot"></span> passwordless authentication for modern threats</div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>Replace passwords with a login users actually finish.</h1>
+          <p class="lead">
+            VeriLink removes passwords and replaces them with secure, time-bound magic links delivered to the user’s email.
+            No password resets. No credential stuffing exposure. Less friction for users, more control for platforms.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="https://app.veri-link.com" target="_blank" rel="noopener">Try the demo</a>
+            <a class="btn" href="#how">See how it works</a>
+            <a class="btn" href="pricing.html">Pricing</a>
+          </div>
+
+          <div class="trust">
+            <span class="tag">time-bound links</span>
+            <span class="tag">device-aware binding</span>
+            <span class="tag">rate-limit defense</span>
+            <span class="tag">built for SaaS</span>
+          </div>
+        </div>
+
+        <aside class="panel" aria-label="What happens during login">
+          <div class="panel-head">
+            <div class="panel-title">What VeriLink does</div>
+            <div class="panel-badge">clear login flow</div>
+          </div>
+          <div class="panel-body">
+            <div class="step">
+              <div class="num">1</div>
+              <div>
+                <h3>User enters email</h3>
+                <p>Your app shows a simple email field. No password field exists.</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="num">2</div>
+              <div>
+                <h3>VeriLink sends a magic link</h3>
+                <p>A secure link is delivered and expires quickly (example: 5 minutes).</p>
+              </div>
+            </div>
+
+            <div class="step">
+              <div class="num">3</div>
+              <div>
+                <h3>Device & policy checks</h3>
+                <p>Optional binding checks can enforce IP bucket, device cookie, and step-up MFA rules.</p>
+              </div>
+            </div>
+
+            <div class="step" style="margin-bottom:0;">
+              <div class="num">4</div>
+              <div>
+                <h3>User is authenticated</h3>
+                <p>Your platform receives the verified session outcome and continues the flow.</p>
+              </div>
+            </div>
+
+            <div class="code">Active user billing: unique authenticated user per 30-day cycle
+No pay-per-login. Pay only for active users.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section id="product" class="block">
+      <div class="section-head">
+        <div>
+          <h2>What VeriLink is</h2>
+          <p>
+            VeriLink is a passwordless authentication layer for your platform. Users log in with email-based magic links instead of passwords.
+            Platforms get policy control, abuse defense, and a cleaner authentication surface.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Passwords removed entirely</h3>
+          <p>No stored password hashes. No password reset flows. Less support overhead and less credential theft risk.</p>
+        </div>
+        <div class="card">
+          <h3>User-friendly by default</h3>
+          <p>Users already understand email. VeriLink avoids the complexity that breaks adoption with passkeys and MFA overload.</p>
+        </div>
+        <div class="card">
+          <h3>Built for automated attack pressure</h3>
+          <p>Rate limiting, session controls, and device-aware enforcement help reduce link spamming and scripted abuse.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="block">
+      <div class="section-head">
+        <div>
+          <h2>How it works</h2>
+          <p>
+            VeriLink makes authentication feel simple for users while giving platforms strict control behind the scenes.
+          </p>
+        </div>
+      </div>
+
+      <div class="how">
+        <div class="item">
+          <div class="title"><span>Step 1: Request login</span><em>User enters email</em></div>
+          <p>Your app asks for an email address. VeriLink generates a one-time login token tied to a short expiration window.</p>
+        </div>
+
+        <div class="item">
+          <div class="title"><span>Step 2: Deliver magic link</span><em>Expires quickly</em></div>
+          <p>VeriLink emails the magic link. If the link is used after expiration or after it’s consumed, access is denied.</p>
+        </div>
+
+        <div class="item">
+          <div class="title"><span>Step 3: Enforce safeguards</span><em>Optional policies</em></div>
+          <p>Platforms can enforce device cookie binding, IP bucket matching, and step-up MFA rules for unknown or risky sessions.</p>
+        </div>
+
+        <div class="item">
+          <div class="title"><span>Step 4: Create session</span><em>Verified access</em></div>
+          <p>Once checks pass, VeriLink creates a verified session outcome so your platform can treat the user as authenticated.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security" class="block">
+      <div class="section-head">
+        <div>
+          <h2>Security posture</h2>
+          <p>
+            VeriLink reduces password-based risk and adds controls that are practical to enforce at scale.
+          </p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Time-bound, one-time links</h3>
+          <p>Links expire quickly and are invalid after use, reducing replay windows and lowering the value of interception.</p>
+        </div>
+        <div class="card">
+          <h3>Device-aware enforcement</h3>
+          <p>Optional device cookie binding and fingerprint signals can force step-up controls when sessions look abnormal.</p>
+        </div>
+        <div class="card">
+          <h3>Abuse controls</h3>
+          <p>Rate limits and policy gating reduce automated link spamming and scripted abuse that targets email delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="block">
+      <div class="section-head">
+        <div>
+          <h2>FAQ</h2>
+          <p>Answers that make it obvious how this works and how billing is measured.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>What is an “active user”?</h3>
+          <p>A unique end user who successfully authenticates via VeriLink at least once within a 30-day billing cycle.</p>
+        </div>
+        <div class="card">
+          <h3>Do you charge per login?</h3>
+          <p>No. VeriLink is designed to be used heavily. You pay per active user, not per authentication event.</p>
+        </div>
+        <div class="card">
+          <h3>Does this replace passwords completely?</h3>
+          <p>Yes. The login flow is email-based magic links with optional step-up checks. No password field required.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="block">
+      <div class="section-head">
+        <div>
+          <h2>Ready to remove passwords?</h2>
+          <p>Try the demo, then wire VeriLink into your platform for passwordless authentication.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Try the demo</h3>
+          <p>See the user flow live in a browser and understand the experience in under 60 seconds.</p>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="https://app.veri-link.com" target="_blank" rel="noopener">Open app.veri-link.com</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Integration</h3>
+          <p>Platforms integrate via API keys or OAuth client credentials. Usage is attributed per platform and billed monthly.</p>
+          <div style="margin-top:12px;">
+            <a class="btn" href="pricing.html">Review pricing</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Enterprise</h3>
+          <p>Need custom policies, logs, or tenancy options? Enterprise is volume-based with tailored requirements.</p>
+          <div style="margin-top:12px;">
+            <a class="btn" href="#contact">Request enterprise</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div style="display:flex; gap:12px; align-items:center;">
+          <img
+            alt="VeriLink"
+            width="22"
+            height="22"
+            style="opacity:0.85; object-fit:contain;"
+            src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png"
+          />
+          <div>VeriLink. Passwordless authentication for platforms that want less risk and less friction.</div>
+        </div>
+
+        <div class="footer-grid">
+          <div>
+            <p class="footer-title">Product</p>
+            <div class="footer-links">
+              <a href="#product">What it is</a><br/>
+              <a href="#how">How it works</a><br/>
+              <a href="#security">Security</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="footer-title">Pricing</p>
+            <div class="footer-links">
+              <a href="pricing.html">Plans</a><br/>
+              <a href="#faq">Billing FAQ</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="footer-title">Demo</p>
+            <div class="footer-links">
+              <a href="https://app.veri-link.com" target="_blank" rel="noopener">app.veri-link.com</a><br/>
+              <a href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px; color:rgba(255,255,255,0.45); font-size:12.5px;">
+          © <span id="year"></span> VeriLink. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
