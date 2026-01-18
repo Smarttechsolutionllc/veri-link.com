@@ -334,7 +334,7 @@
       color: rgba(255,255,255,0.86);
     }
     .card p{
-      margin: 0;
+      margin:  0;
       font-size: 13.5px;
       line-height: 1.55;
       color: var(--muted);
@@ -381,90 +381,6 @@
       color: var(--muted);
     }
 
-    /* Pricing preview */
-    .pricing{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-    .price-card{
-      border-radius: var(--radius2);
-      border: 1px solid rgba(255,255,255,0.10);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
-      padding: 16px;
-      display:flex;
-      flex-direction: column;
-      min-height: 260px;
-    }
-    .price-card .topline{
-      display:flex;
-      justify-content: space-between;
-      align-items:flex-start;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .price-card .tier{
-      font-size: 13px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.72);
-      font-weight: 650;
-    }
-    .price-card .cap{
-      font-size: 12px;
-      color: rgba(255,255,255,0.62);
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.18);
-      padding: 6px 10px;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
-    .price{
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.2px;
-      color: rgba(255,255,255,0.90);
-      margin: 2px 0 6px;
-    }
-    .price-sub{
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.55;
-    }
-    .list{
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display:flex;
-      flex-direction: column;
-      gap: 8px;
-      color: rgba(255,255,255,0.78);
-      font-size: 13.2px;
-      line-height: 1.5;
-    }
-    .list li{
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-    }
-    .check{
-      width: 18px; height: 18px;
-      border-radius: 7px;
-      display:grid;
-      place-items:center;
-      border: 1px solid rgba(120,170,255,0.28);
-      background: rgba(120,170,255,0.10);
-      flex: 0 0 auto;
-      margin-top: 1px;
-    }
-    .check svg{ opacity:0.9; }
-    .price-card .actions{
-      margin-top:auto;
-      padding-top: 12px;
-    }
-
     /* Footer */
     footer{
       padding: 34px 0 60px;
@@ -503,7 +419,6 @@
       .hero-grid{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: 1fr; }
       .how{ grid-template-columns: 1fr; }
-      .pricing{ grid-template-columns: 1fr; }
       .nav-links{ display:none; }
       .brand{ min-width: auto; }
       .nav-ctas{ min-width: auto; }
@@ -732,7 +647,10 @@ No pay-per-login. Pay only for active users.</div>
       <div class="section-head">
         <div>
           <h2>Ready to remove passwords?</h2>
-          <p>Try the demo, then wire VeriLink into your platform for passwordless authentication.</p>
+          <p>
+            Try the demo, then wire VeriLink into your platform for passwordless authentication.
+            Support: <a href="mailto:Support@subversivetek.com">Support@subversivetek.com</a>
+          </p>
         </div>
       </div>
 
@@ -757,7 +675,7 @@ No pay-per-login. Pay only for active users.</div>
           <h3>Enterprise</h3>
           <p>Need custom policies, logs, or tenancy options? Enterprise is volume-based with tailored requirements.</p>
           <div style="margin-top:12px;">
-            <a class="btn" href="#contact">Request enterprise</a>
+            <a class="btn" href="mailto:Support@subversivetek.com?subject=VeriLink%20Enterprise%20Request">Request enterprise</a>
           </div>
         </div>
       </div>
@@ -796,10 +714,10 @@ No pay-per-login. Pay only for active users.</div>
           </div>
 
           <div>
-            <p class="footer-title">Demo</p>
+            <p class="footer-title">Contact</p>
             <div class="footer-links">
               <a href="https://app.veri-link.com" target="_blank" rel="noopener">app.veri-link.com</a><br/>
-              <a href="#contact">Contact</a>
+              <a href="mailto:Support@subversivetek.com">Support@subversivetek.com</a>
             </div>
           </div>
         </div>
