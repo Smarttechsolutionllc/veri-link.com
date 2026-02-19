@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>VeriLink Pricing</title>
 
-  <!-- Apollo Tracker -->
- <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
-o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
-o.onload=function(){window.trackingFunctions.onLoad({appId:"697891f11891130019ba96bb"})},
-document.head.appendChild(o)}initApollo();</script>
-
- <!-- Leadinfo tracking code -->
-<script>
-(function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];
-l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;
-l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}
-}(window,document,'script','https://cdn.leadinfo.net/ping.js','leadinfo','LI-697C3F4FED93E'));
-</script>
+  <!--- RB2B Tracker --->
+ <script>
+    !function(key) {
+    if (window.reb2b) return;
+    window.reb2b = {loaded: true};
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";
+    document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
+}("4N210HQZJ06Z");
+  </script>
   
   <style>
     :root{
