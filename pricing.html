@@ -101,6 +101,30 @@
       color: var(--muted);
     }
 
+    /* ===== VeriLink OIDC CTA (theme-matched) ===== */
+    .vl-cta-wrap{
+      margin: 16px auto 0;
+      display:flex;
+      justify-content:center;
+    }
+    .vl-btn{
+      font: inherit;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.86);
+      cursor: pointer;
+      user-select:none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+    .vl-btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(120,170,255,0.35);
+      background: rgba(120,170,255,0.08);
+    }
+    /* ============================================ */
+
     .grid{
       margin-top: 38px;
       display:grid;
@@ -310,6 +334,13 @@
         Pay for active authenticated users only. Active user means a unique end user who completes a VeriLink authentication
         at least once within a 30-day billing cycle. Dormant accounts cost nothing.
       </p>
+
+      <!-- VeriLink OIDC CTA (inserted) -->
+      <div class="vl-cta-wrap">
+        <button id="oidcGuideBtn" class="vl-btn" type="button">
+          Get the OIDC integration guide for developers
+        </button>
+      </div>
     </section>
 
     <section class="grid">
