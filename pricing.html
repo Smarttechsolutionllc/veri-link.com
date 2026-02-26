@@ -663,13 +663,34 @@
           ts: new Date().toISOString()
         };
 
-        console.log("OIDC guide lead:", payload);
+              try {
+        statusEl.textContent = "Sending…";
 
-        // optional RB2B hook later:
-        // if (window.reb2b && window.reb2b.track) window.reb2b.track("pricing_oidc_guide_request");
+        const res = await fetch("https://app.veri-link.com/api/oidc-guide-request", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: payload.email,
+            company: payload.company,
+            role: payload.role,
+            page: payload.page,
+            ts: payload.ts,
+            guide_url: "https://veri-link.com/assets/guides/verilink-oidc-integration-guide.pdf"
+          })
+        });
 
-        statusEl.textContent = "Submitted. Next step will wire this to your Railway app to email the guide automatically.";
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          statusEl.textContent = (data && data.error) ? data.error : "Error sending. Try again.";
+          return;
+        }
+
+        statusEl.textContent = "Sent. Check your inbox.";
         form.reset();
+      } catch (err) {
+        statusEl.textContent = "Network error. Try again.";
+      }
       });
     })();
   </script>
