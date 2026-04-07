@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>VeriLink | Passwordless login that users actually finish</title>
+  <title>VeriLink | The OpenID Connect Identity Provider That Acts For Your Users</title>
   <link rel="canonical" href="https://veri-link.com/" />
-  <meta name="description" content="VeriLink replaces passwords with secure, time-bound magic links and device-aware protections. Built for startups, SaaS, and enterprise." />
+  <meta name="description" content="VeriLink is an OpenID Connect identity provider. Connect your platform to VeriLink and let it handle authentication on your users' behalf — no passwords, no credential risk." />
   
   <!--- Leadfeeder Tracker --->
 <script>
@@ -486,14 +486,13 @@
   <!-- HERO -->
   <main id="top" class="container">
     <section class="hero">
-      <div class="pill"><span class="dot"></span> passwordless authentication for modern threats</div>
+      <div class="pill"><span class="dot"></span> OpenID Connect identity provider for modern platforms</div>
 
       <div class="hero-grid">
         <div>
-          <h1>Replace passwords with a login users actually finish.</h1>
+          <h1>Your platform's identity layer. Powered by OpenID Connect.</h1>
           <p class="lead">
-            VeriLink removes passwords and replaces them with secure, time-bound magic links delivered to the user’s email.
-            No password resets. No credential stuffing exposure. Less friction for users, more control for platforms.
+            VeriLink is an OpenID Connect identity provider. Connect your platform to VeriLink and it handles authentication on your users' behalf — issuing secure tokens, managing sessions, and eliminating passwords entirely. Think of it like a password manager, but for the passwordless era.
           </p>
 
           <div class="hero-actions">
@@ -503,53 +502,53 @@
           </div>
 
           <div class="trust">
-            <span class="tag">time-bound links</span>
-            <span class="tag">device-aware binding</span>
-            <span class="tag">rate-limit defense</span>
-            <span class="tag">built for SaaS</span>
+            <span class="tag">OpenID Connect standard</span>
+            <span class="tag">device-bound magic links</span>
+            <span class="tag">OIDC token management</span>
+            <span class="tag">built for B2B SaaS</span>
           </div>
         </div>
 
         <aside class="panel" aria-label="What happens during login">
           <div class="panel-head">
-            <div class="panel-title">What VeriLink does</div>
-            <div class="panel-badge">clear login flow</div>
+            <div class="panel-title">How VeriLink works</div>
+            <div class="panel-badge">OpenID Connect flow</div>
           </div>
           <div class="panel-body">
             <div class="step">
               <div class="num">1</div>
               <div>
-                <h3>User enters email</h3>
-                <p>Your app shows a simple email field. No password field exists.</p>
+                <h3>Your app connects to VeriLink</h3>
+                <p>Your platform integrates with VeriLink as its OpenID Connect identity provider using standard OIDC protocols.</p>
               </div>
             </div>
 
             <div class="step">
               <div class="num">2</div>
               <div>
-                <h3>VeriLink sends a magic link</h3>
-                <p>A secure link is delivered and expires quickly (example: 5 minutes).</p>
+                <h3>VeriLink authenticates the user</h3>
+                <p>VeriLink sends the user a secure, device-bound magic link. When clicked, VeriLink verifies identity on your platform's behalf.</p>
               </div>
             </div>
 
             <div class="step">
               <div class="num">3</div>
               <div>
-                <h3>Device & policy checks</h3>
-                <p>Optional binding checks can enforce IP bucket, device cookie, and step-up MFA rules.</p>
+                <h3>Tokens issued to your platform</h3>
+                <p>VeriLink issues OpenID Connect tokens back to your app, confirming the authenticated identity with full policy enforcement.</p>
               </div>
             </div>
 
             <div class="step" style="margin-bottom:0;">
               <div class="num">4</div>
               <div>
-                <h3>User is authenticated</h3>
-                <p>Your platform receives the verified session outcome and continues the flow.</p>
+                <h3>User accesses their session</h3>
+                <p>The user lands in their session. VeriLink manages and governs their tokens centrally — they never touch a password.</p>
               </div>
             </div>
 
-            <div class="code">Active user billing: unique authenticated user per 30-day cycle
-No pay-per-login. Pay only for active users.</div>
+            <div class="code">Standard OIDC endpoints: /oauth/authorize  /oauth/token
+Drop-in identity provider. No proprietary lock-in.</div>
           </div>
         </aside>
       </div>
@@ -561,24 +560,23 @@ No pay-per-login. Pay only for active users.</div>
         <div>
           <h2>What VeriLink is</h2>
           <p>
-            VeriLink is a passwordless authentication layer for your platform. Users log in with email-based magic links instead of passwords.
-            Platforms get policy control, abuse defense, and a cleaner authentication surface.
+            VeriLink is an OpenID Connect identity provider — the world's first OIDC token manager. Your platform connects to VeriLink the same way it would connect to any identity provider. VeriLink then acts on your users' behalf, handling authentication and issuing tokens so your app never has to manage credentials.
           </p>
         </div>
       </div>
 
       <div class="cards">
         <div class="card">
-          <h3>Passwords removed entirely</h3>
-          <p>No stored password hashes. No password reset flows. Less support overhead and less credential theft risk.</p>
+          <h3>VeriLink becomes your IdP</h3>
+          <p>Your platform offloads identity entirely. VeriLink is the identity provider — it owns the auth flow, issues OIDC tokens, and governs sessions on your users' behalf.</p>
         </div>
         <div class="card">
-          <h3>User-friendly by default</h3>
-          <p>Users already understand email. VeriLink avoids the complexity that breaks adoption with passkeys and MFA overload.</p>
+          <h3>Open standard, zero lock-in</h3>
+          <p>VeriLink is built on OpenID Connect — a universal open standard. No proprietary SDK required. If you can speak OIDC, you can connect to VeriLink.</p>
         </div>
         <div class="card">
-          <h3>Built for automated attack pressure</h3>
-          <p>Rate limiting, session controls, and device-aware enforcement help reduce link spamming and scripted abuse that targets email delivery.</p>
+          <h3>Like a password manager — for tokens</h3>
+          <p>Just as a password manager stores and governs credentials, VeriLink stores and governs OpenID tokens. Centrally managed, auditable, and revocable at any time.</p>
         </div>
       </div>
     </section>
@@ -589,30 +587,30 @@ No pay-per-login. Pay only for active users.</div>
         <div>
           <h2>How it works</h2>
           <p>
-            VeriLink makes authentication feel simple for users while giving platforms strict control behind the scenes.
+            Your platform connects to VeriLink as its identity provider. VeriLink handles everything from authentication to token issuance — your app just receives a confirmed identity.
           </p>
         </div>
       </div>
 
       <div class="how">
         <div class="item">
-          <div class="title"><span>Step 1: Request login</span><em>User enters email</em></div>
-          <p>Your app asks for an email address. VeriLink generates a one-time login token tied to a short expiration window.</p>
+          <div class="title"><span>Step 1: Platform connects</span><em>Standard OIDC</em></div>
+          <p>Your app initiates an authorization request to VeriLink using standard OpenID Connect. VeriLink takes it from there.</p>
         </div>
 
         <div class="item">
-          <div class="title"><span>Step 2: Deliver magic link</span><em>Expires quickly</em></div>
-          <p>VeriLink emails the magic link. If the link is used after expiration or after it’s consumed, access is denied.</p>
+          <div class="title"><span>Step 2: VeriLink authenticates</span><em>Magic link sent</em></div>
+          <p>VeriLink sends the user a secure, device-bound magic link. Single-use and short-lived. VeriLink verifies the user's identity on your platform's behalf.</p>
         </div>
 
         <div class="item">
-          <div class="title"><span>Step 3: Enforce safeguards</span><em>Optional policies</em></div>
-          <p>Platforms can enforce device cookie binding, IP bucket matching, and step-up MFA rules for unknown or risky sessions.</p>
+          <div class="title"><span>Step 3: Tokens issued</span><em>OIDC standard</em></div>
+          <p>Once verified, VeriLink issues OpenID Connect tokens back to your platform. Your app receives a confirmed identity — no passwords, no credential storage required on your end.</p>
         </div>
 
         <div class="item">
-          <div class="title"><span>Step 4: Create session</span><em>Verified access</em></div>
-          <p>Once checks pass, VeriLink creates a verified session outcome so your platform can treat the user as authenticated.</p>
+          <div class="title"><span>Step 4: Session begins</span><em>Governed centrally</em></div>
+          <p>The user's session is live. VeriLink manages and governs their tokens centrally. Sessions are auditable and revocable at any time from the VeriLink dashboard.</p>
         </div>
       </div>
     </section>
@@ -623,23 +621,23 @@ No pay-per-login. Pay only for active users.</div>
         <div>
           <h2>Security posture</h2>
           <p>
-            VeriLink reduces password-based risk and adds controls that are practical to enforce at scale.
+            Because VeriLink is the identity provider, security enforcement happens at the IdP layer — not scattered across individual platforms. One place to govern, one place to revoke.
           </p>
         </div>
       </div>
 
       <div class="cards">
         <div class="card">
-          <h3>Time-bound, one-time links</h3>
-          <p>Links expire quickly and are invalid after use, reducing replay windows and lowering the value of interception.</p>
+          <h3>Device-bound magic links</h3>
+          <p>Authentication magic links are bound to the user's device and IP. Single-use, short-lived, and invalid the moment they are consumed — replay attacks have nothing to work with.</p>
         </div>
         <div class="card">
-          <h3>Device-aware enforcement</h3>
-          <p>Optional device cookie binding and fingerprint signals can force step-up controls when sessions look abnormal.</p>
+          <h3>Centralized token governance</h3>
+          <p>All OIDC tokens issued by VeriLink are centrally managed. Revoke a session, rotate a token, or audit activity — all from one place, not scattered across every integrated app.</p>
         </div>
         <div class="card">
-          <h3>Abuse controls</h3>
-          <p>Rate limits and policy gating reduce automated link spamming and scripted abuse that targets email delivery.</p>
+          <h3>No credential surface to attack</h3>
+          <p>There are no passwords stored anywhere. No hashes to breach, no reset flows to hijack. The attack surface that credential stuffing relies on simply does not exist.</p>
         </div>
       </div>
     </section>
@@ -649,22 +647,22 @@ No pay-per-login. Pay only for active users.</div>
       <div class="section-head">
         <div>
           <h2>FAQ</h2>
-          <p>Answers that make it obvious how this works and how billing is measured.</p>
+          <p>Plain answers about what VeriLink is, how it integrates, and how billing works.</p>
         </div>
       </div>
 
       <div class="cards">
         <div class="card">
-          <h3>What is an “active user”?</h3>
-          <p>A unique end user who successfully authenticates via VeriLink at least once within a 30-day billing cycle.</p>
+          <h3>What exactly is an identity provider?</h3>
+          <p>An identity provider (IdP) is the system responsible for verifying who a user is and issuing tokens that confirm that identity to other applications. VeriLink is your IdP — your platform trusts VeriLink to say "this user is who they claim to be."</p>
+        </div>
+        <div class="card">
+          <h3>How does my platform connect to VeriLink?</h3>
+          <p>Via standard OpenID Connect. VeriLink exposes OIDC-compliant endpoints your app connects to just like any identity provider. No proprietary SDK, no lock-in.</p>
         </div>
         <div class="card">
           <h3>Do you charge per login?</h3>
-          <p>No. VeriLink is designed to be used heavily. You pay per active user, not per authentication event.</p>
-        </div>
-        <div class="card">
-          <h3>Does this replace passwords completely?</h3>
-          <p>Yes. The login flow is email-based magic links with optional step-up checks. No password field required.</p>
+          <p>No. You are billed per active user per 30-day cycle — not per authentication event. Use it as heavily as your users need.</p>
         </div>
       </div>
     </section>
@@ -673,10 +671,10 @@ No pay-per-login. Pay only for active users.</div>
     <section id="contact" class="block">
       <div class="section-head">
         <div>
-          <h2>Ready to remove passwords?</h2>
+          <h2>Ready to connect your platform?</h2>
           <p>
-            Try the demo, then wire VeriLink into your platform for passwordless authentication.
-            Support: <a href="mailto:Support@subversivetek.com">Support@subversivetek.com</a>
+            Try the demo, then integrate VeriLink as your OpenID Connect identity provider.
+            Support: <a href="/cdn-cgi/l/email-protection#ffac8a8f8f908d8bbf8c8a9d899a8d8c96899a8b9a94d19c9092"><span class="__cf_email__" data-cfemail="80d3f5f0f0eff2f4c0f3f5e2f6e5f2f3e9f6e5f4e5ebaee3efed">[email&#160;protected]</span></a>
           </p>
         </div>
       </div>
@@ -684,7 +682,7 @@ No pay-per-login. Pay only for active users.</div>
       <div class="cards">
         <div class="card">
           <h3>Try the demo</h3>
-          <p>See the user flow live in a browser and understand the experience in under 60 seconds.</p>
+          <p>See VeriLink act as an identity provider in real time. Understand the full OIDC flow in under 60 seconds.</p>
           <div style="margin-top:12px;">
             <a class="btn primary" href="https://app.veri-link.com" target="_blank" rel="noopener">Open app.veri-link.com</a>
           </div>
@@ -692,7 +690,7 @@ No pay-per-login. Pay only for active users.</div>
 
         <div class="card">
           <h3>Integration</h3>
-          <p>Platforms integrate via API keys or OAuth client credentials. Usage is attributed per platform and billed monthly.</p>
+          <p>Connect your platform to VeriLink via standard OpenID Connect. Use your client credentials to initiate the OIDC flow — VeriLink handles the rest.</p>
           <div style="margin-top:12px;">
             <a class="btn" href="pricing.html">Review pricing</a>
           </div>
@@ -700,9 +698,9 @@ No pay-per-login. Pay only for active users.</div>
 
         <div class="card">
           <h3>Enterprise</h3>
-          <p>Need custom policies, logs, or tenancy options? Enterprise is volume-based with tailored requirements.</p>
+          <p>Need custom token policies, audit logs, or multi-tenant identity management? Enterprise plans are volume-based with tailored requirements.</p>
           <div style="margin-top:12px;">
-            <a class="btn" href="mailto:Support@subversivetek.com?subject=VeriLink%20Enterprise%20Request">Request enterprise</a>
+            <a class="btn" href="/cdn-cgi/l/email-protection#7b280e0b0b14090f3b080e190d1e0908120d1e0f1e105518141644080e19111e180f462d1e0912371215105e494b3e150f1e090b0912081e5e494b291e0a0e1e080f">Request enterprise</a>
           </div>
         </div>
       </div>
@@ -719,7 +717,7 @@ No pay-per-login. Pay only for active users.</div>
             style="opacity:0.85; object-fit:contain;"
             src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png"
           />
-          <div>VeriLink. Passwordless authentication for platforms that want less risk and less friction.</div>
+          <div>VeriLink. The OpenID Connect identity provider that acts on your users' behalf.</div>
         </div>
 
         <div class="footer-grid">
@@ -744,20 +742,4 @@ No pay-per-login. Pay only for active users.</div>
             <p class="footer-title">Contact</p>
             <div class="footer-links">
               <a href="https://app.veri-link.com" target="_blank" rel="noopener">app.veri-link.com</a><br/>
-              <a href="mailto:Support@subversivetek.com">Support@subversivetek.com</a>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:16px; color:rgba(255,255,255,0.45); font-size:12.5px;">
-          © <span id="year"></span> VeriLink. All rights reserved.
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+              <a href="/cdn-cgi/l/email-protection#dc8fa9acacb3aea89cafa9beaab9aeafb5aab9a8b9b7f2bfb3b1"><span class="__cf_email__" data-cfemail="386b4d4848574a4c784b4d5a4e5d4a4b514e5d4c5d53165b5755">[email&#160;protected]</spa
