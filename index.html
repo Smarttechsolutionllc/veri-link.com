@@ -418,7 +418,7 @@
     }
     .footer-grid{
       display:grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
       gap: 16px;
       margin-top: 14px;
     }
@@ -449,6 +449,9 @@
       .nav-links{ display:none; }
       .brand{ min-width: auto; }
       .nav-ctas{ min-width: auto; }
+      .footer-grid{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px){
       .footer-grid{ grid-template-columns: 1fr; }
     }
   </style>
@@ -742,4 +745,19 @@ Drop-in identity provider. No proprietary lock-in.</div>
             <p class="footer-title">Contact</p>
             <div class="footer-links">
               <a href="https://app.veri-link.com" target="_blank" rel="noopener">app.veri-link.com</a><br/>
-              <a href="mailto:support@veri-link.com">support@veri-link.com</a
+              <a href="mailto:support@veri-link.com">support@veri-link.com</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="footer-title">Legal</p>
+            <div class="footer-links">
+              <a href="terms.html">Service Agreement</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
