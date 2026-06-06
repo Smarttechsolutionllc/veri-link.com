@@ -1,690 +1,978 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="canonical" href="https://veri-link.com/terms.html" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Service & Acceptable Use Agreement | VeriLink</title>
-  <meta name="description" content="VeriLink Inc. Service and Acceptable Use Agreement — effective April 13, 2026." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://veri-link.com/terms.html" />
+<title>Service &amp; Acceptable Use Agreement | VeriLink</title>
+<meta name="description" content="VeriLink Inc. Service and Acceptable Use Agreement — effective April 13, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg0:#070A0F;
-      --bg1:#0B1020;
-      --card: rgba(255,255,255,0.04);
-      --card2: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.10);
-      --border2: rgba(120,170,255,0.25);
-      --text: rgba(255,255,255,0.90);
-      --muted: rgba(255,255,255,0.66);
-      --muted2: rgba(255,255,255,0.50);
-      --accent: rgba(120,170,255,0.92);
-      --accentSoft: rgba(120,170,255,0.14);
-      --accent2: rgba(170,120,255,0.80);
-      --shadow: 0 18px 70px rgba(0,0,0,0.60);
-      --radius: 18px;
-      --radius2: 22px;
-    }
+<style>
+/* ============================================================
+   VARIABLES & RESET  (matches index.html design system)
+   ============================================================ */
+:root {
+  --bg:          #0b1020;
+  --bg2:         #0d1530;
+  --bg3:         #0f1840;
+  --blue:        #079EF0;
+  --purple:      #6218F1;
+  --grad:        linear-gradient(135deg, #6218F1 0%, #079EF0 100%);
+  --grad-r:      linear-gradient(135deg, #079EF0 0%, #6218F1 100%);
+  --grad-glow:   linear-gradient(135deg, rgba(98,24,241,.12) 0%, rgba(7,158,240,.12) 100%);
+  --blue-glow:   rgba(7,158,240,.08);
+  --white:       #ffffff;
+  --w80:         rgba(255,255,255,.8);
+  --w60:         rgba(255,255,255,.6);
+  --w40:         rgba(255,255,255,.4);
+  --w20:         rgba(255,255,255,.2);
+  --w10:         rgba(255,255,255,.1);
+  --w06:         rgba(255,255,255,.06);
+  --w04:         rgba(255,255,255,.04);
+  --w02:         rgba(255,255,255,.02);
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(120,170,255,0.08), transparent 55%),
-        radial-gradient(1000px 600px at 85% 20%, rgba(170,120,255,0.07), transparent 60%),
-        linear-gradient(180deg, var(--bg0), var(--bg1));
-    }
+  /* Legal-document aliases, mapped to the index palette */
+  --card:        rgba(255,255,255,.04);
+  --card2:       rgba(255,255,255,.06);
+  --border:      rgba(255,255,255,.10);
+  --border2:     rgba(7,158,240,.25);
+  --text:        rgba(255,255,255,.90);
+  --muted:       rgba(255,255,255,.66);
+  --muted2:      rgba(255,255,255,.50);
+  --accent:      #079EF0;
+  --accentSoft:  rgba(7,158,240,.14);
+  --accent2:     #6218F1;
 
-    a{ color:inherit; text-decoration:none; }
-    .container{ max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+  --r6:  6px;
+  --r10: 10px;
+  --r14: 14px;
+  --r20: 20px;
+  --r28: 28px;
+  --radius:  14px;
+  --radius2: 20px;
+  --display: 'Inter', sans-serif;
+  --body:    'Inter', sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+  --nav-h:   76px;
+}
 
-    /* Nav */
-    .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(7,10,15,0.92), rgba(7,10,15,0.68));
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .nav-inner{
-      height: 74px;
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-    }
-    .brand img{
-      width: 34px;
-      height: 34px;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.55));
-      opacity: 0.95;
-    }
-    .brand span{
-      font-weight: 600;
-      letter-spacing: 0.2px;
-      color: rgba(255,255,255,0.88);
-    }
-    .nav-links{
-      display:flex;
-      gap: 16px;
-      align-items:center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .nav-links a{
-      padding: 10px 10px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-    .nav-links a:hover{
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.82);
-    }
-    .nav-ctas{
-      display:flex;
-      gap: 10px;
-      align-items:center;
-      justify-content: flex-end;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.04);
-      color: rgba(255,255,255,0.88);
-      font-size: 14px;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-      user-select:none;
-      white-space: nowrap;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      border-color: rgba(120,170,255,0.35);
-      background: rgba(120,170,255,0.08);
-    }
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(120,170,255,0.22), rgba(120,170,255,0.10));
-      border-color: rgba(120,170,255,0.30);
-    }
-    .btn.primary:hover{
-      border-color: rgba(120,170,255,0.45);
-      background: linear-gradient(180deg, rgba(120,170,255,0.28), rgba(120,170,255,0.12));
-    }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
-    /* Legal document layout */
-    .legal-wrap{
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 56px 20px 80px;
-    }
+body {
+  background: var(--bg) !important;
+  color: var(--white);
+  font-family: var(--body);
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
 
-    .legal-header{
-      margin-bottom: 48px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-    }
-    .legal-header .pill{
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      padding: 7px 12px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.03);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.2px;
-      margin-bottom: 20px;
-    }
-    .legal-header .dot{
-      width: 7px; height: 7px;
-      border-radius: 999px;
-      background: rgba(120,170,255,0.85);
-      box-shadow: 0 0 18px rgba(120,170,255,0.45);
-    }
-    .legal-header h1{
-      margin: 0 0 10px;
-      font-size: clamp(26px, 3vw, 42px);
-      font-weight: 650;
-      letter-spacing: -0.5px;
-      line-height: 1.1;
-      color: var(--text);
-    }
-    .legal-header .meta{
-      font-size: 14px;
-      color: var(--muted2);
-      display:flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .legal-header .meta span{
-      display:flex;
-      align-items:center;
-      gap: 6px;
-    }
-    .legal-header .meta .sep{
-      color: rgba(255,255,255,0.20);
-    }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
 
-    .legal-intro{
-      margin-bottom: 48px;
-      padding: 22px 24px;
-      border-radius: var(--radius2);
-      border: 1px solid var(--border);
-      background: var(--card);
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-    .legal-intro strong{ color: var(--text); }
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
 
-    /* Sections */
-    .legal-section{
-      margin-bottom: 48px;
-    }
-    .legal-section h2{
-      margin: 0 0 20px;
-      font-size: 19px;
-      font-weight: 650;
-      color: var(--accent);
-      letter-spacing: -0.1px;
-      display:flex;
-      align-items:center;
-      gap: 10px;
-    }
-    .legal-section h2::before{
-      content:'';
-      display:block;
-      width: 3px;
-      height: 20px;
-      border-radius: 2px;
-      background: var(--accent);
-      opacity: 0.55;
-      flex:0 0 auto;
-    }
-    .legal-section h3{
-      margin: 28px 0 10px;
-      font-size: 15px;
-      font-weight: 650;
-      color: rgba(255,255,255,0.86);
-    }
-    .legal-section p{
-      margin: 0 0 14px;
-      font-size: 14.5px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-    .legal-section p:last-child{ margin-bottom: 0; }
+/* ============================================================
+   GLOBAL GRID OVERLAY
+   ============================================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(7,158,240,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7,158,240,.025) 1px, transparent 1px) !important;
+  background-size: 64px 64px !important;
+  pointer-events: none;
+  z-index: 0;
+}
 
-    /* Definitions table */
-    .def-table{
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 14px;
-    }
-    .def-table tr{
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .def-table tr:last-child{ border-bottom: none; }
-    .def-table td{
-      padding: 13px 10px;
-      font-size: 14px;
-      line-height: 1.65;
-      vertical-align: top;
-    }
-    .def-table td:first-child{
-      white-space: nowrap;
-      padding-right: 24px;
-      color: rgba(255,255,255,0.86);
-      font-weight: 600;
-      width: 160px;
-    }
-    .def-table td:last-child{
-      color: var(--muted);
-    }
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
-    /* Callout box */
-    .callout{
-      margin: 16px 0 20px;
-      padding: 18px 22px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(120,170,255,0.30);
-      background: rgba(120,170,255,0.07);
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.82);
-    }
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(7,158,240,.07) !important;
+  border: 1px solid rgba(7,158,240,.22);
+  padding: 6px 15px;
+  border-radius: 100px;
+}
+.tag-pill::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue) !important;
+  flex-shrink: 0;
+}
 
-    /* Bullet list */
-    .legal-list{
-      margin: 10px 0 14px 0;
-      padding: 0;
-      list-style: none;
-    }
-    .legal-list li{
-      display:flex;
-      gap: 12px;
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-    .legal-list li:last-child{ border-bottom: none; }
-    .legal-list li::before{
-      content:'';
-      display:block;
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--accent);
-      opacity: 0.7;
-      margin-top: 9px;
-      flex: 0 0 auto;
-    }
+.grad-text {
+  background: var(--grad) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text !important;
+}
 
-    /* Enforcement steps */
-    .steps{
-      display:flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 14px 0;
-    }
-    .step-row{
-      display:flex;
-      gap: 16px;
-      padding: 16px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
-      align-items: flex-start;
-    }
-    .step-label{
-      white-space: nowrap;
-      font-size: 13px;
-      font-weight: 650;
-      color: var(--accent);
-      padding-top: 1px;
-      min-width: 160px;
-    }
-    .step-desc{
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--muted);
-    }
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--body);
+  font-weight: 600;
+  border-radius: var(--r10);
+  transition: all .25s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  padding: 10px 22px;
+}
+.btn-grad {
+  background: var(--grad) !important;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+.btn-grad::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.12) !important;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.btn-grad:hover::after { opacity: 1; }
+.btn-grad:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(98,24,241,.38); }
 
-    /* General provisions dl */
-    .provision-list{
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
-      margin: 0;
-    }
-    .provision-list dt{
-      font-size: 14.5px;
-      font-weight: 650;
-      color: rgba(255,255,255,0.86);
-      margin-bottom: 4px;
-    }
-    .provision-list dd{
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
+.btn-ghost {
+  background: transparent !important;
+  color: var(--w60);
+  border: 1px solid var(--w10);
+}
+.btn-ghost:hover { color: var(--white); border-color: var(--w20); background: var(--w06); }
 
-    /* Disclaimer caps */
-    .caps{
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--muted);
-      padding: 18px 22px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.02);
-    }
+.btn-lg { font-size: 16px; padding: 14px 30px; border-radius: var(--r10); }
+.btn-outline-blue {
+  background: transparent !important;
+  color: var(--white);
+  border: 1px solid var(--w10);
+  backdrop-filter: blur(8px);
+}
+.btn-outline-blue:hover { border-color: var(--blue); color: var(--blue); background: rgba(7,158,240,.05); }
 
-    .legal-notice{
-      margin-top: 28px;
-      padding: 14px 18px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.02);
-      font-size: 13px;
-      color: var(--muted2);
-      line-height: 1.6;
-    }
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+.reveal, .reveal-l, .reveal-r, .reveal-s {
+  transition: opacity .75s ease, transform .75s ease;
+}
+.reveal   { opacity: 0; transform: translateY(38px); }
+.reveal-l { opacity: 0; transform: translateX(-38px); }
+.reveal-r { opacity: 0; transform: translateX(38px); }
+.reveal-s { opacity: 0; transform: scale(.93); }
 
-    /* Footer */
-    footer{
-      padding: 34px 0 60px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted2);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-    .footer-grid{
-      display:grid;
-      grid-template-columns: 1.2fr 1fr 1fr 1fr;
-      gap: 16px;
-      margin-top: 14px;
-    }
-    .footer-title{
-      font-size: 13px;
-      font-weight: 650;
-      color: rgba(255,255,255,0.74);
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-      margin: 0 0 8px;
-    }
-    .footer-links a{
-      display:inline-block;
-      padding: 6px 0;
-      color: rgba(255,255,255,0.62);
-      border-bottom: 1px solid transparent;
-    }
-    .footer-links a:hover{
-      color: rgba(255,255,255,0.84);
-      border-bottom-color: rgba(120,170,255,0.22);
-    }
+.reveal.on, .reveal-l.on, .reveal-r.on, .reveal-s.on {
+  opacity: 1;
+  transform: none;
+}
 
-    @media (max-width: 980px){
-      .nav-links{ display:none; }
-      .sig-grid{ grid-template-columns: 1fr; }
-      .step-row{ flex-direction: column; gap: 6px; }
-      .step-label{ min-width: auto; }
-      .footer-grid{ grid-template-columns: 1fr; }
-    }
-    @media (max-width: 600px){
-      .def-table td:first-child{ width: 120px; }
-    }
-  </style>
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  background: rgba(11,16,32,.30) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.nav-logo img { height: 60px; width: auto; }
+
+/* Center links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--w60);
+  padding: 8px 14px;
+  border-radius: var(--r6);
+  transition: color .2s, background .2s;
+}
+.nav-links a:hover { color: var(--white); background: var(--w06); }
+
+/* Right actions */
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 9px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  width: 22px; height: 2px;
+  background: var(--white) !important;
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.mobile-menu {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: rgba(11,16,32,.97) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--w06);
+  padding: 20px 24px 28px;
+  z-index: 999;
+  transform: translateY(-110%);
+  transition: transform .42s cubic-bezier(.16,1,.3,1);
+}
+.mobile-menu.open { transform: translateY(0); }
+.mob-links { display: flex; flex-direction: column; gap: 2px; margin-bottom: 18px; }
+.mob-links a {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--w60);
+  padding: 12px 16px;
+  border-radius: var(--r10);
+  transition: all .2s;
+}
+.mob-links a:hover { color: var(--white); background: var(--w06); }
+.mob-actions { display: flex; flex-direction: column; gap: 10px; }
+.mob-actions .btn { justify-content: center; }
+
+/* ============================================================
+   LEGAL DOCUMENT LAYOUT  (re-themed to index palette)
+   ============================================================ */
+main { position: relative; z-index: 2; }
+
+.legal-wrap{
+  max-width: 860px;
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 60px) 24px 96px;
+}
+
+.legal-header{
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.legal-header .pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: rgba(7,158,240,.07);
+  border: 1px solid rgba(7,158,240,.22);
+  padding: 6px 15px;
+  border-radius: 100px;
+  margin-bottom: 22px;
+}
+.legal-header .dot{
+  width: 6px; height: 6px;
+  border-radius: 999px;
+  background: var(--blue);
+  box-shadow: 0 0 18px rgba(7,158,240,.55);
+  flex-shrink: 0;
+}
+.legal-header h1{
+  margin: 0 0 12px;
+  font-family: var(--display);
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text);
+}
+.legal-header .meta{
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted2);
+  display:flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.legal-header .meta span{
+  display:flex;
+  align-items:center;
+  gap: 6px;
+}
+.legal-header .meta .sep{
+  color: rgba(255,255,255,0.20);
+}
+
+.legal-intro{
+  margin-bottom: 48px;
+  padding: 22px 24px;
+  border-radius: var(--radius2);
+  border: 1px solid var(--border);
+  background: var(--card);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.legal-intro strong{ color: var(--text); }
+
+/* Sections */
+.legal-section{
+  margin-bottom: 48px;
+}
+.legal-section h2{
+  margin: 0 0 20px;
+  font-family: var(--display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: -0.1px;
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+.legal-section h2::before{
+  content:'';
+  display:block;
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+  background: var(--grad);
+  flex:0 0 auto;
+}
+.legal-section h3{
+  margin: 28px 0 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.86);
+}
+.legal-section p{
+  margin: 0 0 14px;
+  font-size: 14.5px;
+  line-height: 1.78;
+  color: var(--muted);
+}
+.legal-section p:last-child{ margin-bottom: 0; }
+.legal-section a{
+  color: var(--blue);
+  border-bottom: 1px solid rgba(7,158,240,.30);
+  transition: color .2s, border-color .2s;
+}
+.legal-section a:hover{ color: var(--white); border-bottom-color: var(--white); }
+
+/* Definitions table */
+.def-table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 14px;
+}
+.def-table tr{
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.def-table tr:last-child{ border-bottom: none; }
+.def-table td{
+  padding: 13px 10px;
+  font-size: 14px;
+  line-height: 1.65;
+  vertical-align: top;
+}
+.def-table td:first-child{
+  white-space: nowrap;
+  padding-right: 24px;
+  color: rgba(255,255,255,0.86);
+  font-weight: 600;
+  width: 160px;
+}
+.def-table td:last-child{
+  color: var(--muted);
+}
+
+/* Callout box */
+.callout{
+  margin: 16px 0 20px;
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(7,158,240,0.30);
+  background: rgba(7,158,240,0.07);
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+}
+
+/* Bullet list */
+.legal-list{
+  margin: 10px 0 14px 0;
+  padding: 0;
+  list-style: none;
+}
+.legal-list li{
+  display:flex;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.legal-list li:last-child{ border-bottom: none; }
+.legal-list li::before{
+  content:'';
+  display:block;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--blue);
+  margin-top: 9px;
+  flex: 0 0 auto;
+}
+
+/* Enforcement steps */
+.steps{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 14px 0;
+}
+.step-row{
+  display:flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  align-items: flex-start;
+}
+.step-label{
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--blue);
+  padding-top: 2px;
+  min-width: 160px;
+}
+.step-desc{
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* General provisions dl */
+.provision-list{
+  display:flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+}
+.provision-list dt{
+  font-size: 14.5px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.86);
+  margin-bottom: 4px;
+}
+.provision-list dd{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.provision-list a{ color: var(--blue); }
+
+/* Disclaimer caps */
+.caps{
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  padding: 18px 22px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.02);
+}
+
+.legal-notice{
+  margin-top: 28px;
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+  font-size: 13px;
+  color: var(--muted2);
+  line-height: 1.7;
+}
+.legal-notice a{ color: var(--blue); }
+
+/* ============================================================
+   FOOTER  (matches index.html)
+   ============================================================ */
+footer {
+  position: relative;
+  z-index: 2;
+  background: var(--bg) !important;
+  border-top: 1px solid var(--w06);
+  padding: 72px 24px 32px;
+}
+.foot-inner { max-width: 1180px; margin: 0 auto; }
+.foot-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+.foot-brand img { height: 34px; margin-bottom: 16px; }
+.foot-brand p { font-size: 13.5px; color: var(--w40); line-height: 1.72; margin-bottom: 20px; }
+.foot-contacts { display: flex; flex-direction: column; gap: 8px; }
+.foot-contacts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--w40);
+  transition: color .2s;
+}
+.foot-contacts a:hover { color: var(--blue); }
+.foot-col h5 {
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--w60);
+  margin-bottom: 18px;
+}
+.foot-col ul { display: flex; flex-direction: column; gap: 10px; }
+.foot-col ul a { font-size: 13.5px; color: var(--w40); transition: color .2s; }
+.foot-col ul a:hover { color: var(--blue); }
+.foot-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid var(--w06);
+  font-size: 12.5px;
+  color: var(--w40);
+}
+.foot-socials { display: flex; gap: 10px; }
+.foot-soc {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--w06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--w40);
+  transition: all .22s;
+}
+.foot-soc:hover { border-color: var(--blue); color: var(--blue); background: rgba(7,158,240,.05); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .foot-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-actions { display: none; }
+  .hamburger { display: flex; }
+  .step-row { flex-direction: column; gap: 6px; }
+  .step-label { min-width: auto; }
+  .foot-top { grid-template-columns: 1fr; gap: 32px; }
+  .foot-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+@media (max-width: 600px) {
+  .def-table td:first-child { width: 120px; }
+}
+</style>
 </head>
-
 <body>
-  <!-- NAV -->
-  <header class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <a class="brand" href="/" aria-label="VeriLink home">
-          <img
-            alt="VeriLink"
-            decoding="async"
-            src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png"
-          />
-          <span>VeriLink</span>
-        </a>
 
-        <nav class="nav-links" aria-label="Primary">
-          <a href="/#product">Product</a>
-          <a href="/#how">How it works</a>
-          <a href="/#security">Security</a>
-          <a href="/#faq">FAQ</a>
-        </nav>
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <!-- Logo -->
+    <a href="/" class="nav-logo">
+      <img src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png" alt="VeriLink">
+    </a>
 
-        <div class="nav-ctas">
-          <a class="btn" href="https://app.veri-link.com/register" target="_blank" rel="noopener">Open demo</a>
-          <a class="btn primary" href="pricing.html">View pricing</a>
-        </div>
+    <!-- Center links -->
+    <div class="nav-links">
+      <a href="/#product">Product</a>
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#security">Security</a>
+      <a href="/#faq">FAQ</a>
+    </div>
+
+    <!-- Right actions -->
+    <div class="nav-actions">
+      <a href="tel:984-386-4340" class="btn btn-ghost">Contact</a>
+      <a href="index.htm#pricing" class="btn btn-grad">View Pricing</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <div class="hamburger" id="hbg" aria-label="Menu" role="button">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mmenu">
+  <div class="mob-links">
+    <a href="/#product"      class="ml">Product</a>
+    <a href="/#how-it-works" class="ml">How it Works</a>
+    <a href="/#security"     class="ml">Security</a>
+    <a href="/#faq"          class="ml">FAQ</a>
+  </div>
+  <div class="mob-actions">
+    <a href="index.htm#pricing" class="btn btn-grad btn-lg">View Pricing</a>
+    <a href="tel:984-386-4340" class="btn btn-ghost btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 984-386-4340</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     AGREEMENT
+     ============================================================ -->
+<main>
+  <div class="legal-wrap">
+
+    <div class="legal-header reveal">
+      <div class="pill"><span class="dot"></span> Legal Document</div>
+      <h1>Service &amp; <span class="grad-text">Acceptable Use Agreement</span></h1>
+      <div class="meta">
+        <span>Effective Date: April 13, 2026</span>
+        <span class="sep">|</span>
+        <span>Version 1.0</span>
+        <span class="sep">|</span>
+        <span>VeriLink Inc.</span>
       </div>
     </div>
-  </header>
 
-  <!-- AGREEMENT -->
-  <main>
-    <div class="legal-wrap">
+    <div class="legal-intro reveal">
+      This Service and Acceptable Use Agreement ("Agreement") is entered into between <strong>VeriLink Inc.</strong>, a North Carolina corporation ("VeriLink", "we", "us", or "our"), and the entity or individual accessing or using the VeriLink platform ("Customer", "you", or "your"). By activating an account, accessing the VeriLink API, or integrating VeriLink services into any product or platform, you agree to be bound by this Agreement in full.
+    </div>
 
-      <div class="legal-header">
-        <div class="pill"><span class="dot"></span> Legal document</div>
-        <h1>Service &amp; Acceptable Use Agreement</h1>
-        <div class="meta">
-          <span>Effective Date: April 13, 2026</span>
-          <span class="sep">|</span>
-          <span>Version 1.0</span>
-          <span class="sep">|</span>
-          <span>VeriLink Inc.</span>
+    <!-- 1. Definitions -->
+    <div class="legal-section reveal" id="definitions">
+      <h2>1. Definitions</h2>
+      <table class="def-table">
+        <tbody>
+          <tr>
+            <td>1.1 &ldquo;Service&rdquo;</td>
+            <td>The VeriLink passwordless authentication platform, including all APIs, SDKs, dashboard interfaces, documentation, and associated infrastructure provided by VeriLink Inc.</td>
+          </tr>
+          <tr>
+            <td>1.2 &ldquo;Customer&rdquo;</td>
+            <td>Any developer, organization, business entity, or individual that registers for and uses the Service under a VeriLink account.</td>
+          </tr>
+          <tr>
+            <td>1.3 &ldquo;End User&rdquo;</td>
+            <td>Any individual who authenticates through the Service as a result of a Customer's integration. End Users do not have a direct contractual relationship with VeriLink.</td>
+          </tr>
+          <tr>
+            <td>1.4 &ldquo;Active User&rdquo;</td>
+            <td>A unique End User who completes at least one VeriLink authentication event within a given 30-day billing cycle.</td>
+          </tr>
+          <tr>
+            <td>1.5 &ldquo;Integration&rdquo;</td>
+            <td>The technical embedding or connection of the Service into a Customer's own application, platform, or product.</td>
+          </tr>
+          <tr>
+            <td>1.6 &ldquo;Resell&rdquo;</td>
+            <td>Any act of charging, invoicing, billing, or otherwise transferring the cost of VeriLink services as a discrete, identifiable fee to any third party, including End Users.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. License Grant -->
+    <div class="legal-section reveal" id="license">
+      <h2>2. License Grant</h2>
+      <p>Subject to the terms of this Agreement and payment of applicable fees, VeriLink grants the Customer a limited, non-exclusive, non-transferable, non-sublicensable license to access and use the Service solely for the purpose of integrating passwordless authentication into Customer's own products or services for the benefit of Customer's End Users. This license does not permit resale, sublicensing, or any use of the Service as a standalone offering made available to third parties.</p>
+    </div>
+
+    <!-- 3. Prohibited Uses -->
+    <div class="legal-section reveal" id="aup">
+      <h2>3. Prohibited Uses and Acceptable Use Policy</h2>
+
+      <h3>3.1 Prohibition on End-User Billing</h3>
+      <div class="callout">
+        Customers are expressly prohibited from charging, invoicing, or billing their End Users any separate, discrete, or itemized fee specifically for access to or use of VeriLink authentication services. VeriLink may only be used as an integrated, embedded component of Customer's own product or service offering.
+      </div>
+      <p>For the avoidance of doubt, this prohibition applies to but is not limited to: (a) line-item charges on invoices or receipts referencing VeriLink, authentication, or login services; (b) per-user or per-authentication fees passed directly to End Users; (c) add-on pricing tiers marketed to End Users that are funded by or derived from VeriLink usage costs; and (d) any resale, white-labeling, or repackaging of the Service as a standalone authentication product.</p>
+      <p>Nothing in this section prohibits a Customer from adjusting their own product pricing generally, provided that such pricing is not explicitly tied to or derived from VeriLink authentication usage as a discrete billable unit.</p>
+
+      <h3>3.2 Additional Prohibited Activities</h3>
+      <ul class="legal-list">
+        <li>Attempting to reverse engineer, decompile, or extract source code from the Service.</li>
+        <li>Using the Service to authenticate users on behalf of a competitor to VeriLink without prior written consent.</li>
+        <li>Sharing API keys, credentials, or account access with unauthorized third parties.</li>
+        <li>Using the Service in any manner that violates applicable law, regulation, or third-party rights.</li>
+        <li>Submitting fraudulent, synthetic, or bot-generated authentication events to manipulate billing.</li>
+        <li>Removing, obscuring, or altering any VeriLink branding, attribution, or notices where required.</li>
+        <li>Using the Service to facilitate unauthorized access to systems, data exfiltration, or any malicious activity.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Billing -->
+    <div class="legal-section reveal" id="billing">
+      <h2>4. Billing and Payment Terms</h2>
+      <p>VeriLink charges Customers based on Monthly Active Users (MAU) as defined in Section 1.4. Billing is processed through Stripe using metered usage records submitted by VeriLink at the close of each 30-day billing cycle. Dormant accounts that do not complete an authentication event within a billing cycle are not counted as Active Users and incur no charge.</p>
+      <p>Current pricing tiers are published at <a href="pricing.html">veri-link.com/pricing.html</a> and may be updated by VeriLink with thirty (30) days written notice to the Customer. Continued use of the Service following a pricing change constitutes acceptance of the revised rates. All fees are non-refundable except where required by applicable law or expressly stated otherwise in writing by VeriLink.</p>
+    </div>
+
+    <!-- 5. Enforcement -->
+    <div class="legal-section reveal" id="enforcement">
+      <h2>5. Enforcement and Remedies</h2>
+
+      <h3>5.1 Violation Detection</h3>
+      <p>VeriLink reserves the right to monitor account activity, review Customer integrations, and investigate reports of potential violations of this Agreement. Monitoring may include review of API usage patterns, authentication event logs, and any publicly available information about Customer's product or pricing structure.</p>
+
+      <h3>5.2 Enforcement Process</h3>
+      <p>Upon identification of a suspected violation, VeriLink will follow the escalation process below:</p>
+      <div class="steps">
+        <div class="step-row">
+          <div class="step-label">Step 1: Written Notice</div>
+          <div class="step-desc">VeriLink will notify the Customer in writing via the registered account email, describing the suspected violation and requesting a written response within seven (7) business days.</div>
+        </div>
+        <div class="step-row">
+          <div class="step-label">Step 2: Suspension</div>
+          <div class="step-desc">If no satisfactory response is received, or if the violation is confirmed, VeriLink may suspend Customer's account and API access pending resolution. VeriLink will provide forty-eight (48) hours notice prior to suspension except in cases of material or repeated violation.</div>
+        </div>
+        <div class="step-row">
+          <div class="step-label">Step 3: Termination</div>
+          <div class="step-desc">If the violation is not remediated within thirty (30) days of the initial notice, or if the Customer refuses to cure the violation, VeriLink may terminate the Customer's account and this Agreement immediately and without further obligation.</div>
         </div>
       </div>
 
-      <div class="legal-intro">
-        This Service and Acceptable Use Agreement ("Agreement") is entered into between <strong>VeriLink Inc.</strong>, a North Carolina corporation ("VeriLink", "we", "us", or "our"), and the entity or individual accessing or using the VeriLink platform ("Customer", "you", or "your"). By activating an account, accessing the VeriLink API, or integrating VeriLink services into any product or platform, you agree to be bound by this Agreement in full.
+      <h3>5.3 Immediate Termination</h3>
+      <p>Notwithstanding Section 5.2, VeriLink reserves the right to immediately suspend or terminate any account without prior notice in cases involving: (a) repeated violations following a prior warning; (b) deliberate or bad-faith non-compliance; (c) use of the Service in connection with illegal activity; or (d) any action that poses a material risk to VeriLink's infrastructure, reputation, or other customers.</p>
+    </div>
+
+    <!-- 6. Data and Privacy -->
+    <div class="legal-section reveal" id="privacy">
+      <h2>6. Data and Privacy</h2>
+      <p>VeriLink processes authentication event data solely to provide the Service and does not sell, license, or share End User data with third parties except as required by law. Customers are responsible for ensuring their use of the Service complies with all applicable privacy laws, including but not limited to GDPR, CCPA, and HIPAA where applicable. Customers must maintain their own privacy policy disclosing the use of third-party authentication infrastructure to their End Users. VeriLink's Privacy Policy, available at <a href="/">veri-link.com</a>, is incorporated into this Agreement by reference.</p>
+    </div>
+
+    <!-- 7. Intellectual Property -->
+    <div class="legal-section reveal" id="ip">
+      <h2>7. Intellectual Property</h2>
+      <p>VeriLink retains all right, title, and interest in and to the Service, including all underlying technology, algorithms, APIs, trademarks, and documentation. This Agreement does not convey any ownership interest in the Service to the Customer. Customer retains all right, title, and interest in their own applications and products into which the Service is integrated.</p>
+    </div>
+
+    <!-- 8. Disclaimers -->
+    <div class="legal-section reveal" id="disclaimers">
+      <h2>8. Disclaimers and Limitation of Liability</h2>
+      <div class="caps">
+        THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. VERILINK DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF SECURITY VULNERABILITIES.
+        <br/><br/>
+        TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERILINK'S TOTAL CUMULATIVE LIABILITY TO CUSTOMER FOR ANY CLAIMS ARISING UNDER OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY CUSTOMER TO VERILINK IN THE THREE (3) MONTHS PRECEDING THE CLAIM. IN NO EVENT SHALL VERILINK BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.
       </div>
+    </div>
 
-      <!-- 1. Definitions -->
-      <div class="legal-section" id="definitions">
-        <h2>1. Definitions</h2>
-        <table class="def-table">
-          <tbody>
-            <tr>
-              <td>1.1 &ldquo;Service&rdquo;</td>
-              <td>The VeriLink passwordless authentication platform, including all APIs, SDKs, dashboard interfaces, documentation, and associated infrastructure provided by VeriLink Inc.</td>
-            </tr>
-            <tr>
-              <td>1.2 &ldquo;Customer&rdquo;</td>
-              <td>Any developer, organization, business entity, or individual that registers for and uses the Service under a VeriLink account.</td>
-            </tr>
-            <tr>
-              <td>1.3 &ldquo;End User&rdquo;</td>
-              <td>Any individual who authenticates through the Service as a result of a Customer's integration. End Users do not have a direct contractual relationship with VeriLink.</td>
-            </tr>
-            <tr>
-              <td>1.4 &ldquo;Active User&rdquo;</td>
-              <td>A unique End User who completes at least one VeriLink authentication event within a given 30-day billing cycle.</td>
-            </tr>
-            <tr>
-              <td>1.5 &ldquo;Integration&rdquo;</td>
-              <td>The technical embedding or connection of the Service into a Customer's own application, platform, or product.</td>
-            </tr>
-            <tr>
-              <td>1.6 &ldquo;Resell&rdquo;</td>
-              <td>Any act of charging, invoicing, billing, or otherwise transferring the cost of VeriLink services as a discrete, identifiable fee to any third party, including End Users.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- 9. Governing Law -->
+    <div class="legal-section reveal" id="governing-law">
+      <h2>9. Governing Law and Dispute Resolution</h2>
+      <p>This Agreement shall be governed by and construed in accordance with the laws of the State of North Carolina, without regard to its conflict of law principles. Any dispute arising out of or relating to this Agreement shall first be submitted to good-faith negotiation between the parties. If unresolved within thirty (30) days, disputes shall be submitted to binding arbitration administered in Wake County, North Carolina under the rules of the American Arbitration Association. Notwithstanding the foregoing, either party may seek injunctive or equitable relief in any court of competent jurisdiction to prevent irreparable harm.</p>
+    </div>
 
-      <!-- 2. License Grant -->
-      <div class="legal-section" id="license">
-        <h2>2. License Grant</h2>
-        <p>Subject to the terms of this Agreement and payment of applicable fees, VeriLink grants the Customer a limited, non-exclusive, non-transferable, non-sublicensable license to access and use the Service solely for the purpose of integrating passwordless authentication into Customer's own products or services for the benefit of Customer's End Users. This license does not permit resale, sublicensing, or any use of the Service as a standalone offering made available to third parties.</p>
-      </div>
+    <!-- 10. Modifications -->
+    <div class="legal-section reveal" id="modifications">
+      <h2>10. Modifications to this Agreement</h2>
+      <p>VeriLink reserves the right to modify this Agreement at any time. Customers will be notified of material changes via the registered account email address at least thirty (30) days prior to the effective date of the change. Continued use of the Service following the effective date constitutes acceptance of the modified Agreement. If Customer does not agree to the modified terms, Customer must discontinue use of the Service and notify VeriLink in writing.</p>
+    </div>
 
-      <!-- 3. Prohibited Uses -->
-      <div class="legal-section" id="aup">
-        <h2>3. Prohibited Uses and Acceptable Use Policy</h2>
-
-        <h3>3.1 Prohibition on End-User Billing</h3>
-        <div class="callout">
-          Customers are expressly prohibited from charging, invoicing, or billing their End Users any separate, discrete, or itemized fee specifically for access to or use of VeriLink authentication services. VeriLink may only be used as an integrated, embedded component of Customer's own product or service offering.
+    <!-- 11. General Provisions -->
+    <div class="legal-section reveal" id="general">
+      <h2>11. General Provisions</h2>
+      <dl class="provision-list">
+        <div>
+          <dt>Entire Agreement</dt>
+          <dd>This Agreement constitutes the entire agreement between the parties with respect to the Service and supersedes all prior agreements, representations, and understandings.</dd>
         </div>
-        <p>For the avoidance of doubt, this prohibition applies to but is not limited to: (a) line-item charges on invoices or receipts referencing VeriLink, authentication, or login services; (b) per-user or per-authentication fees passed directly to End Users; (c) add-on pricing tiers marketed to End Users that are funded by or derived from VeriLink usage costs; and (d) any resale, white-labeling, or repackaging of the Service as a standalone authentication product.</p>
-        <p>Nothing in this section prohibits a Customer from adjusting their own product pricing generally, provided that such pricing is not explicitly tied to or derived from VeriLink authentication usage as a discrete billable unit.</p>
+        <div>
+          <dt>Severability</dt>
+          <dd>If any provision of this Agreement is found to be unenforceable, the remaining provisions shall continue in full force and effect.</dd>
+        </div>
+        <div>
+          <dt>Waiver</dt>
+          <dd>Failure by VeriLink to enforce any provision of this Agreement shall not constitute a waiver of VeriLink's right to enforce such provision in the future.</dd>
+        </div>
+        <div>
+          <dt>Assignment</dt>
+          <dd>Customer may not assign or transfer this Agreement or any rights hereunder without VeriLink's prior written consent. VeriLink may assign this Agreement in connection with a merger, acquisition, or sale of substantially all assets.</dd>
+        </div>
+        <div>
+          <dt>Notices</dt>
+          <dd>All notices under this Agreement shall be sent to the Customer's registered account email and to <a href="mailto:support@veri-link.com">support@veri-link.com</a> for notices to VeriLink.</dd>
+        </div>
+        <div>
+          <dt>Independent Contractors</dt>
+          <dd>The parties are independent contractors. Nothing in this Agreement creates a partnership, joint venture, agency, or employment relationship between the parties.</dd>
+        </div>
+      </dl>
+    </div>
 
-        <h3>3.2 Additional Prohibited Activities</h3>
-        <ul class="legal-list">
-          <li>Attempting to reverse engineer, decompile, or extract source code from the Service.</li>
-          <li>Using the Service to authenticate users on behalf of a competitor to VeriLink without prior written consent.</li>
-          <li>Sharing API keys, credentials, or account access with unauthorized third parties.</li>
-          <li>Using the Service in any manner that violates applicable law, regulation, or third-party rights.</li>
-          <li>Submitting fraudulent, synthetic, or bot-generated authentication events to manipulate billing.</li>
-          <li>Removing, obscuring, or altering any VeriLink branding, attribution, or notices where required.</li>
-          <li>Using the Service to facilitate unauthorized access to systems, data exfiltration, or any malicious activity.</li>
+    <div class="legal-notice reveal">
+      VeriLink Inc. &nbsp;|&nbsp; Incorporated in North Carolina &nbsp;|&nbsp; <a href="/">veri-link.com</a> &nbsp;|&nbsp; <a href="mailto:support@veri-link.com">support@veri-link.com</a> &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; April 2026
+    </div>
+
+  </div><!-- /legal-wrap -->
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <!-- Brand column -->
+      <div class="foot-brand">
+        <img src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png" alt="VeriLink">
+        <p>OpenID Connect Identity Provider enabling passwordless authentication and centralized identity management for software platforms of all sizes.</p>
+        <div class="foot-contacts">
+          <a href="tel:984-386-4340"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> &nbsp;984-386-4340</a>
+          <a href="https://veri-link.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> &nbsp;veri-link.com</a>
+          <a href="mailto:support@veri-link.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> &nbsp;support@veri-link.com</a>
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div class="foot-col">
+        <h5>Product</h5>
+        <ul>
+          <li><a href="/#product">Features</a></li>
+          <li><a href="/#how-it-works">How it Works</a></li>
+          <li><a href="index.htm#pricing">Pricing</a></li>
+          <li><a href="/#security">Security</a></li>
         </ul>
       </div>
 
-      <!-- 4. Billing -->
-      <div class="legal-section" id="billing">
-        <h2>4. Billing and Payment Terms</h2>
-        <p>VeriLink charges Customers based on Monthly Active Users (MAU) as defined in Section 1.4. Billing is processed through Stripe using metered usage records submitted by VeriLink at the close of each 30-day billing cycle. Dormant accounts that do not complete an authentication event within a billing cycle are not counted as Active Users and incur no charge.</p>
-        <p>Current pricing tiers are published at <a href="pricing.html" style="color:var(--accent); border-bottom:1px solid rgba(120,170,255,0.30);">veri-link.com/pricing.html</a> and may be updated by VeriLink with thirty (30) days written notice to the Customer. Continued use of the Service following a pricing change constitutes acceptance of the revised rates. All fees are non-refundable except where required by applicable law or expressly stated otherwise in writing by VeriLink.</p>
-      </div>
-
-      <!-- 5. Enforcement -->
-      <div class="legal-section" id="enforcement">
-        <h2>5. Enforcement and Remedies</h2>
-
-        <h3>5.1 Violation Detection</h3>
-        <p>VeriLink reserves the right to monitor account activity, review Customer integrations, and investigate reports of potential violations of this Agreement. Monitoring may include review of API usage patterns, authentication event logs, and any publicly available information about Customer's product or pricing structure.</p>
-
-        <h3>5.2 Enforcement Process</h3>
-        <p>Upon identification of a suspected violation, VeriLink will follow the escalation process below:</p>
-        <div class="steps">
-          <div class="step-row">
-            <div class="step-label">Step 1 — Written Notice</div>
-            <div class="step-desc">VeriLink will notify the Customer in writing via the registered account email, describing the suspected violation and requesting a written response within seven (7) business days.</div>
-          </div>
-          <div class="step-row">
-            <div class="step-label">Step 2 — Suspension</div>
-            <div class="step-desc">If no satisfactory response is received, or if the violation is confirmed, VeriLink may suspend Customer's account and API access pending resolution. VeriLink will provide forty-eight (48) hours notice prior to suspension except in cases of material or repeated violation.</div>
-          </div>
-          <div class="step-row">
-            <div class="step-label">Step 3 — Termination</div>
-            <div class="step-desc">If the violation is not remediated within thirty (30) days of the initial notice, or if the Customer refuses to cure the violation, VeriLink may terminate the Customer's account and this Agreement immediately and without further obligation.</div>
-          </div>
-        </div>
-
-        <h3>5.3 Immediate Termination</h3>
-        <p>Notwithstanding Section 5.2, VeriLink reserves the right to immediately suspend or terminate any account without prior notice in cases involving: (a) repeated violations following a prior warning; (b) deliberate or bad-faith non-compliance; (c) use of the Service in connection with illegal activity; or (d) any action that poses a material risk to VeriLink's infrastructure, reputation, or other customers.</p>
-      </div>
-
-      <!-- 6. Data and Privacy -->
-      <div class="legal-section" id="privacy">
-        <h2>6. Data and Privacy</h2>
-        <p>VeriLink processes authentication event data solely to provide the Service and does not sell, license, or share End User data with third parties except as required by law. Customers are responsible for ensuring their use of the Service complies with all applicable privacy laws, including but not limited to GDPR, CCPA, and HIPAA where applicable. Customers must maintain their own privacy policy disclosing the use of third-party authentication infrastructure to their End Users. VeriLink's Privacy Policy, available at <a href="/" style="color:var(--accent); border-bottom:1px solid rgba(120,170,255,0.30);">veri-link.com</a>, is incorporated into this Agreement by reference.</p>
-      </div>
-
-      <!-- 7. Intellectual Property -->
-      <div class="legal-section" id="ip">
-        <h2>7. Intellectual Property</h2>
-        <p>VeriLink retains all right, title, and interest in and to the Service, including all underlying technology, algorithms, APIs, trademarks, and documentation. This Agreement does not convey any ownership interest in the Service to the Customer. Customer retains all right, title, and interest in their own applications and products into which the Service is integrated.</p>
-      </div>
-
-      <!-- 8. Disclaimers -->
-      <div class="legal-section" id="disclaimers">
-        <h2>8. Disclaimers and Limitation of Liability</h2>
-        <div class="caps">
-          THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. VERILINK DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF SECURITY VULNERABILITIES.
-          <br/><br/>
-          TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERILINK'S TOTAL CUMULATIVE LIABILITY TO CUSTOMER FOR ANY CLAIMS ARISING UNDER OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY CUSTOMER TO VERILINK IN THE THREE (3) MONTHS PRECEDING THE CLAIM. IN NO EVENT SHALL VERILINK BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.
-        </div>
-      </div>
-
-      <!-- 9. Governing Law -->
-      <div class="legal-section" id="governing-law">
-        <h2>9. Governing Law and Dispute Resolution</h2>
-        <p>This Agreement shall be governed by and construed in accordance with the laws of the State of North Carolina, without regard to its conflict of law principles. Any dispute arising out of or relating to this Agreement shall first be submitted to good-faith negotiation between the parties. If unresolved within thirty (30) days, disputes shall be submitted to binding arbitration administered in Wake County, North Carolina under the rules of the American Arbitration Association. Notwithstanding the foregoing, either party may seek injunctive or equitable relief in any court of competent jurisdiction to prevent irreparable harm.</p>
-      </div>
-
-      <!-- 10. Modifications -->
-      <div class="legal-section" id="modifications">
-        <h2>10. Modifications to this Agreement</h2>
-        <p>VeriLink reserves the right to modify this Agreement at any time. Customers will be notified of material changes via the registered account email address at least thirty (30) days prior to the effective date of the change. Continued use of the Service following the effective date constitutes acceptance of the modified Agreement. If Customer does not agree to the modified terms, Customer must discontinue use of the Service and notify VeriLink in writing.</p>
-      </div>
-
-      <!-- 11. General Provisions -->
-      <div class="legal-section" id="general">
-        <h2>11. General Provisions</h2>
-        <dl class="provision-list">
-          <div>
-            <dt>Entire Agreement</dt>
-            <dd>This Agreement constitutes the entire agreement between the parties with respect to the Service and supersedes all prior agreements, representations, and understandings.</dd>
-          </div>
-          <div>
-            <dt>Severability</dt>
-            <dd>If any provision of this Agreement is found to be unenforceable, the remaining provisions shall continue in full force and effect.</dd>
-          </div>
-          <div>
-            <dt>Waiver</dt>
-            <dd>Failure by VeriLink to enforce any provision of this Agreement shall not constitute a waiver of VeriLink's right to enforce such provision in the future.</dd>
-          </div>
-          <div>
-            <dt>Assignment</dt>
-            <dd>Customer may not assign or transfer this Agreement or any rights hereunder without VeriLink's prior written consent. VeriLink may assign this Agreement in connection with a merger, acquisition, or sale of substantially all assets.</dd>
-          </div>
-          <div>
-            <dt>Notices</dt>
-            <dd>All notices under this Agreement shall be sent to the Customer's registered account email and to <a href="mailto:support@veri-link.com" style="color:var(--accent);">support@veri-link.com</a> for notices to VeriLink.</dd>
-          </div>
-          <div>
-            <dt>Independent Contractors</dt>
-            <dd>The parties are independent contractors. Nothing in this Agreement creates a partnership, joint venture, agency, or employment relationship between the parties.</dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="legal-notice">
-        VeriLink Inc. &nbsp;|&nbsp; Incorporated in North Carolina &nbsp;|&nbsp; <a href="/" style="color:var(--accent);">veri-link.com</a> &nbsp;|&nbsp; <a href="mailto:support@veri-link.com" style="color:var(--accent);">support@veri-link.com</a> &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; April 2026
-      </div>
-
-    </div><!-- /legal-wrap -->
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div style="display:flex; gap:12px; align-items:center;">
-        <img
-          alt="VeriLink"
-          width="22"
-          height="22"
-          style="opacity:0.85; object-fit:contain;"
-          src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png"
-        />
-        <div>VeriLink. The OpenID Connect identity provider that acts on your users' behalf.</div>
-      </div>
-
-      <div class="footer-grid">
-        <div>
-          <p class="footer-title">Product</p>
-          <div class="footer-links">
-            <a href="/#product">What it is</a><br/>
-            <a href="/#how">How it works</a><br/>
-            <a href="/#security">Security</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="footer-title">Pricing</p>
-          <div class="footer-links">
-            <a href="pricing.html">Plans</a><br/>
-            <a href="/#faq">Billing FAQ</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="footer-title">Contact</p>
-          <div class="footer-links">
-            <a href="https://app.veri-link.com" target="_blank" rel="noopener">app.veri-link.com</a><br/>
-            <a href="mailto:support@veri-link.com">support@veri-link.com</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="footer-title">Legal</p>
-          <div class="footer-links">
-            <a href="terms.html">Service Agreement</a>
-          </div>
-        </div>
+      <!-- Legal -->
+      <div class="foot-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
 
+    <div class="foot-bottom">
+      <p>© 2025 VeriLink Inc. All rights reserved. &nbsp;·&nbsp; Primary Contact: Joseph Sack</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+'use strict';
+
+/* ── Navbar scroll ─────────────────────────────── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+}, { passive: true });
+
+/* ── Mobile menu ───────────────────────────────── */
+const hbg   = document.getElementById('hbg');
+const mmenu = document.getElementById('mmenu');
+let mOpen = false;
+
+function toggleMenu(force) {
+  mOpen = force !== undefined ? force : !mOpen;
+  mmenu.classList.toggle('open', mOpen);
+  const sp = hbg.querySelectorAll('span');
+  if (mOpen) {
+    sp[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+    sp[1].style.opacity   = '0';
+    sp[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  } else {
+    sp[0].style.transform = sp[2].style.transform = '';
+    sp[1].style.opacity   = '';
+  }
+}
+
+hbg.addEventListener('click', () => toggleMenu());
+
+document.querySelectorAll('.ml, .mob-actions a').forEach(el => {
+  el.addEventListener('click', () => toggleMenu(false));
+});
+
+/* ── Smooth scroll for same-page anchor links ──── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - (document.getElementById('nav')?.offsetHeight || 88), behavior: 'smooth' });
+    }
+  });
+});
+
+/* ── Scroll-reveal (IntersectionObserver) ──────── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target;
+    const delay = (parseInt(el.dataset.d) || 0) * 90;
+    setTimeout(() => el.classList.add('on'), delay);
+    ro.unobserve(el);
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -55px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-s').forEach(el => ro.observe(el));
+</script>
 </body>
 </html>
