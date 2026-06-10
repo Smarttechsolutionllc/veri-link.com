@@ -2141,5 +2141,145 @@ function initMagicalCanvas(canvasId) {
 initMagicalCanvas('product-canvas');
 initMagicalCanvas('pricing-canvas');
 </script>
+   <!--
+  VeriLink chat widget.
+  Paste this whole block into index.htm just before the closing </body> tag.
+  Set CHAT_ENDPOINT below to your deployed Railway service URL + /chat.
+-->
+<div id="vl-chat-root"></div>
+<style>
+  #vl-chat-root {
+    --vl-accent: #2563eb;        /* change to your VeriLink brand color */
+    --vl-bg: #ffffff;
+    --vl-text: #1a1a1a;
+    --vl-muted: #6b7280;
+    --vl-border: #e5e7eb;
+    --vl-user-bubble: #2563eb;
+    --vl-bot-bubble: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  #vl-launcher {
+    position: fixed; right: 20px; bottom: 20px; z-index: 9998;
+    width: 56px; height: 56px; border-radius: 50%; border: none;
+    background: var(--vl-accent); color: #fff; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2); font-size: 24px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #vl-panel {
+    position: fixed; right: 20px; bottom: 88px; z-index: 9999;
+    width: 360px; max-width: calc(100vw - 40px); height: 480px; max-height: calc(100vh - 120px);
+    background: var(--vl-bg); border: 1px solid var(--vl-border); border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18); display: none; flex-direction: column; overflow: hidden;
+  }
+  #vl-panel.vl-open { display: flex; }
+  #vl-header {
+    padding: 14px 16px; background: var(--vl-accent); color: #fff;
+    font-weight: 600; font-size: 15px;
+  }
+  #vl-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .vl-msg { max-width: 85%; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; white-space: pre-wrap; }
+  .vl-user { align-self: flex-end; background: var(--vl-user-bubble); color: #fff; border-bottom-right-radius: 4px; }
+  .vl-bot { align-self: flex-start; background: var(--vl-bot-bubble); color: var(--vl-text); border-bottom-left-radius: 4px; }
+  #vl-inputbar { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--vl-border); }
+  #vl-input { flex: 1; border: 1px solid var(--vl-border); border-radius: 10px; padding: 9px 11px; font-size: 14px; outline: none; }
+  #vl-input:focus { border-color: var(--vl-accent); }
+  #vl-send { border: none; background: var(--vl-accent); color: #fff; border-radius: 10px; padding: 0 16px; cursor: pointer; font-size: 14px; }
+  #vl-send:disabled { opacity: 0.5; cursor: default; }
+  @media (prefers-reduced-motion: no-preference) {
+    #vl-launcher { transition: transform 0.15s ease; }
+    #vl-launcher:hover { transform: scale(1.05); }
+  }
+</style>
+<script>
+(function () {
+  // --- Set this to your deployed Railway URL ---
+  var CHAT_ENDPOINT = "https://verilink-chat-production.up.railway.app/chat";
+
+  var root = document.getElementById("vl-chat-root");
+  var history = [];
+
+  var launcher = document.createElement("button");
+  launcher.id = "vl-launcher";
+  launcher.setAttribute("aria-label", "Open chat");
+  launcher.textContent = "💬";
+
+  var panel = document.createElement("div");
+  panel.id = "vl-panel";
+  panel.setAttribute("role", "dialog");
+  panel.setAttribute("aria-label", "VeriLink assistant");
+  panel.innerHTML =
+    '<div id="vl-header">Ask VeriLink</div>' +
+    '<div id="vl-messages"></div>' +
+    '<div id="vl-inputbar">' +
+      '<input id="vl-input" type="text" placeholder="Ask a question..." autocomplete="off" />' +
+      '<button id="vl-send">Send</button>' +
+    '</div>';
+
+  root.appendChild(launcher);
+  root.appendChild(panel);
+
+  var messagesEl = panel.querySelector("#vl-messages");
+  var inputEl = panel.querySelector("#vl-input");
+  var sendEl = panel.querySelector("#vl-send");
+
+  function addMessage(role, text) {
+    var div = document.createElement("div");
+    div.className = "vl-msg " + (role === "user" ? "vl-user" : "vl-bot");
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  var greeted = false;
+  launcher.addEventListener("click", function () {
+    var open = panel.classList.toggle("vl-open");
+    launcher.setAttribute("aria-label", open ? "Close chat" : "Open chat");
+    if (open) {
+      if (!greeted) {
+        addMessage("bot", "Hi. I can answer questions about VeriLink. What would you like to know?");
+        greeted = true;
+      }
+      inputEl.focus();
+    }
+  });
+
+  function send() {
+    var text = inputEl.value.trim();
+    if (!text) return;
+    inputEl.value = "";
+    addMessage("user", text);
+    history.push({ role: "user", content: text });
+
+    sendEl.disabled = true;
+    var thinking = addMessage("bot", "...");
+
+    fetch(CHAT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: history })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        var reply = data.reply || data.error || "Sorry, something went wrong.";
+        thinking.textContent = reply;
+        if (data.reply) history.push({ role: "assistant", content: data.reply });
+      })
+      .catch(function () {
+        thinking.textContent = "Sorry, I could not reach the server.";
+      })
+      .finally(function () {
+        sendEl.disabled = false;
+        inputEl.focus();
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      });
+  }
+
+  sendEl.addEventListener("click", send);
+  inputEl.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") send();
+  });
+})();
+</script>
 </body>
 </html>
