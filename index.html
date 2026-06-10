@@ -1298,7 +1298,7 @@ footer {
 
     <!-- Right actions -->
     <div class="nav-actions">
-      <a href="tel:984-386-4340" class="btn btn-ghost">Contact</a>
+      <a href="https://cal.com/joseph-sack-ryvvvo" target="_blank" rel="noopener" class="btn btn-ghost">Book a Meeting</a>
       <a href="#pricing" class="btn btn-grad">View Pricing</a>
     </div>
 
@@ -2141,7 +2141,7 @@ function initMagicalCanvas(canvasId) {
 initMagicalCanvas('product-canvas');
 initMagicalCanvas('pricing-canvas');
 </script>
-   <!--
+<!--
   VeriLink chat widget.
   Paste this whole block into index.htm just before the closing </body> tag.
   Set CHAT_ENDPOINT below to your deployed Railway service URL + /chat.
@@ -2160,11 +2160,12 @@ initMagicalCanvas('pricing-canvas');
   }
   #vl-launcher {
     position: fixed; right: 20px; bottom: 20px; z-index: 9998;
-    width: 56px; height: 56px; border-radius: 50%; border: none;
-    background: var(--vl-accent); color: #fff; cursor: pointer;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2); font-size: 24px;
+    width: 60px; height: 60px; border-radius: 50%; border: none;
+    background: #fff; cursor: pointer; padding: 0; overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
     display: flex; align-items: center; justify-content: center;
   }
+  #vl-launcher svg { width: 100%; height: 100%; display: block; }
   #vl-panel {
     position: fixed; right: 20px; bottom: 88px; z-index: 9999;
     width: 360px; max-width: calc(100vw - 40px); height: 480px; max-height: calc(100vh - 120px);
@@ -2173,9 +2174,15 @@ initMagicalCanvas('pricing-canvas');
   }
   #vl-panel.vl-open { display: flex; }
   #vl-header {
-    padding: 14px 16px; background: var(--vl-accent); color: #fff;
-    font-weight: 600; font-size: 15px;
+    padding: 13px 16px; background: var(--vl-accent); color: #fff;
+    display: flex; align-items: center; gap: 10px;
   }
+  #vl-header .vl-avatar { width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex: none; background: #fff; }
+  #vl-header .vl-avatar svg { width: 100%; height: 100%; display: block; }
+  #vl-htext { display: flex; flex-direction: column; line-height: 1.25; }
+  #vl-htext .vl-name { font-weight: 600; font-size: 15px; }
+  #vl-htext .vl-status { font-size: 12px; opacity: 0.9; display: flex; align-items: center; gap: 5px; }
+  #vl-htext .vl-dot { width: 7px; height: 7px; border-radius: 50%; background: #34d399; display: inline-block; }
   #vl-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
   .vl-msg { max-width: 85%; padding: 9px 12px; border-radius: 12px; font-size: 14px; line-height: 1.4; white-space: pre-wrap; }
   .vl-user { align-self: flex-end; background: var(--vl-user-bubble); color: #fff; border-bottom-right-radius: 4px; }
@@ -2198,17 +2205,28 @@ initMagicalCanvas('pricing-canvas');
   var root = document.getElementById("vl-chat-root");
   var history = [];
 
+  // Founder photo, used in both the launcher and the header.
+  var VL_AVATAR =
+    '<img src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/founder.png" ' +
+    'alt="VeriLink founder" style="width:100%;height:100%;object-fit:cover;display:block;" />';
+
   var launcher = document.createElement("button");
   launcher.id = "vl-launcher";
   launcher.setAttribute("aria-label", "Open chat");
-  launcher.textContent = "💬";
+  launcher.innerHTML = VL_AVATAR;
 
   var panel = document.createElement("div");
   panel.id = "vl-panel";
   panel.setAttribute("role", "dialog");
   panel.setAttribute("aria-label", "VeriLink assistant");
   panel.innerHTML =
-    '<div id="vl-header">Ask VeriLink</div>' +
+    '<div id="vl-header">' +
+      '<div class="vl-avatar">' + VL_AVATAR + '</div>' +
+      '<div id="vl-htext">' +
+        '<span class="vl-name">VeriLink Assistant</span>' +
+        '<span class="vl-status"><span class="vl-dot"></span>Online now</span>' +
+      '</div>' +
+    '</div>' +
     '<div id="vl-messages"></div>' +
     '<div id="vl-inputbar">' +
       '<input id="vl-input" type="text" placeholder="Ask a question..." autocomplete="off" />' +
