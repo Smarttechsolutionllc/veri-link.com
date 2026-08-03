@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VeriLink  Passwordless Identity, Reimagined</title>
+<title>VeriLink — Passwordless Identity, Reimagined</title>
 <meta name="description" content="VeriLink is an OpenID Connect identity provider enabling passwordless authentication and centralized identity management for software platforms.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
 /* ============================================================
    GHL CONTAINER OVERRIDES
@@ -21,8 +20,7 @@
   background-color: #0b1020 !important;
   background: #0b1020 !important;
 }
-
-/* GHL section / row / column wrappers  keep transparent */
+/* GHL section / row / column wrappers — keep transparent */
 .hl_page-preview--content .c-section,
 .hl_page-preview--content .c-row,
 .hl_page-preview--content .c-column,
@@ -31,7 +29,6 @@
   background: transparent !important;
   background-color: transparent !important;
 }
-
 /* ============================================================
    VARIABLES & RESET
    ============================================================ */
@@ -64,10 +61,8 @@
   --mono:    'JetBrains Mono', monospace;
   --nav-h:   76px;
 }
-
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 16px; }
-
 body {
   background: var(--bg) !important;
   color: var(--white);
@@ -76,16 +71,13 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
-
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
-
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 2px; }
-
 /* ============================================================
    GLOBAL GRID OVERLAY
    ============================================================ */
@@ -100,12 +92,10 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
-
 /* ============================================================
    UTILITIES
    ============================================================ */
 .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-
 .tag-pill {
   display: inline-flex;
   align-items: center;
@@ -127,14 +117,12 @@ body::before {
   background: var(--blue) !important;
   flex-shrink: 0;
 }
-
 .grad-text {
   background: var(--grad) !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text !important;
 }
-
 .section {
   position: relative;
   z-index: 2;
@@ -157,7 +145,6 @@ body::before {
   margin: 0 auto;
   line-height: 1.75;
 }
-
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -188,14 +175,12 @@ body::before {
 }
 .btn-grad:hover::after { opacity: 1; }
 .btn-grad:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(98,24,241,.38); }
-
 .btn-ghost {
   background: transparent !important;
   color: var(--w60);
   border: 1px solid var(--w10);
 }
 .btn-ghost:hover { color: var(--white); border-color: var(--w20); background: var(--w06); }
-
 .btn-lg { font-size: 16px; padding: 14px 30px; border-radius: var(--r10); }
 .btn-outline-blue {
   background: transparent !important;
@@ -204,7 +189,6 @@ body::before {
   backdrop-filter: blur(8px);
 }
 .btn-outline-blue:hover { border-color: var(--blue); color: var(--blue); background: rgba(7,158,240,.05); }
-
 /* ============================================================
    SCROLL REVEAL ANIMATIONS
    ============================================================ */
@@ -215,12 +199,10 @@ body::before {
 .reveal-l { opacity: 0; transform: translateX(-38px); }
 .reveal-r { opacity: 0; transform: translateX(38px); }
 .reveal-s { opacity: 0; transform: scale(.93); }
-
 .reveal.on, .reveal-l.on, .reveal-r.on, .reveal-s.on {
   opacity: 1;
   transform: none;
 }
-
 /* ============================================================
    NAVBAR
    ============================================================ */
@@ -245,10 +227,8 @@ body::before {
   max-width: 1180px;
   margin: 0 auto;
 }
-
 /* Logo */
 .nav-logo img { height: 60px; width: auto; }
-
 /* Center links */
 .nav-links {
   display: flex;
@@ -264,10 +244,8 @@ body::before {
   transition: color .2s, background .2s;
 }
 .nav-links a:hover { color: var(--white); background: var(--w06); }
-
 /* Right actions */
 .nav-actions { display: flex; align-items: center; gap: 10px; }
-
 /* Hamburger */
 .hamburger {
   display: none;
@@ -283,7 +261,6 @@ body::before {
   border-radius: 2px;
   transition: all .3s ease;
 }
-
 /* ============================================================
    MOBILE MENU
    ============================================================ */
@@ -313,7 +290,6 @@ body::before {
 .mob-links a:hover { color: var(--white); background: var(--w06); }
 .mob-actions { display: flex; flex-direction: column; gap: 10px; }
 .mob-actions .btn { justify-content: center; }
-
 /* ============================================================
    HERO
    ============================================================ */
@@ -324,7 +300,6 @@ body::before {
   flex-direction: column;
   overflow: hidden;
 }
-
 /* Hero background video */
 #hero-video {
   position: absolute !important;
@@ -335,8 +310,7 @@ body::before {
   z-index: 0 !important;
   pointer-events: none !important;
 }
-
-/* Hero body  takes all remaining space */
+/* Hero body — takes all remaining space */
 .hero-body {
   flex: 1;
   position: relative;
@@ -348,7 +322,6 @@ body::before {
   text-align: center;
   padding: calc(var(--nav-h) + 40px) 24px 60px;
 }
-
 /* Badge */
 .hero-badge {
   display: inline-flex;
@@ -374,7 +347,6 @@ body::before {
   0%,100% { opacity: 1; transform: scale(1); }
   50%      { opacity: .45; transform: scale(.75); }
 }
-
 .hero-h1 {
   font-family: var(--display);
   font-size: clamp(2.8rem, 6.5vw, 5.2rem);
@@ -385,7 +357,6 @@ body::before {
   max-width: 900px;
   animation: fadeU .9s ease .1s both;
 }
-
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.18rem);
   color: var(--w60);
@@ -395,7 +366,18 @@ body::before {
   font-weight: 400;
   animation: fadeU .9s ease .2s both;
 }
-
+/* Audience note — clarifies developer portal vs end-user app link */
+.hero-audience-note {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--w40);
+  max-width: 620px;
+  margin: -24px auto 40px;
+  line-height: 1.7;
+  animation: fadeU .9s ease .25s both;
+}
+.hero-audience-note a { color: var(--blue); border-bottom: 1px dashed rgba(7,158,240,.35); transition: color .2s, border-color .2s; }
+.hero-audience-note a:hover { color: var(--white); border-color: var(--white); }
 .hero-ctas {
   display: flex;
   align-items: center;
@@ -405,7 +387,6 @@ body::before {
   animation: fadeU .9s ease .3s both;
   margin-bottom: 72px;
 }
-
 .hero-stats {
   display: flex;
   align-items: center;
@@ -427,7 +408,6 @@ body::before {
 }
 .hstat-l { font-size: 12px; color: var(--w40); margin-top: 3px; }
 .hstat-div { width: 1px; height: 38px; background: var(--w10); }
-
 /* ============================================================
    NEWS TICKER
    ============================================================ */
@@ -472,7 +452,6 @@ body::before {
   padding-left: 130px;
 }
 .ticker-track:hover { animation-play-state: paused; }
-
 .tick {
   display: inline-flex;
   align-items: center;
@@ -485,12 +464,10 @@ body::before {
   flex-shrink: 0;
 }
 .tick-star { color: var(--blue); font-size: 15px; }
-
 @keyframes ticker {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-
 /* ============================================================
    KEYFRAMES (hero)
    ============================================================ */
@@ -502,13 +479,12 @@ body::before {
   from { opacity: 0; transform: translateY(-18px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 /* ============================================================
    PRODUCT SECTION
    ============================================================ */
 #product { background: var(--bg2) !important; }
 /* ============================================================
-   MAGICAL ANIMATED BACKGROUND  shared by #product and #pricing
+   MAGICAL ANIMATED BACKGROUND — shared by #product and #pricing
    ============================================================ */
 #product,
 #pricing {
@@ -553,7 +529,6 @@ body::before {
 /* Pricing gets a slight phase offset so the two sections don't move in lockstep */
 #pricing::before { animation-delay: -7s;  }
 #pricing::after  { animation-delay: -11s; }
-
 /* Third nebula via an injected element handled by .product-aurora */
 .product-aurora {
   position: absolute;
@@ -588,7 +563,6 @@ body::before {
 /* Pricing aurora offset so it feels independent */
 #pricing .product-aurora::before { animation-delay: -9s;  }
 #pricing .product-aurora::after  { animation-delay: -5s;  }
-
 @keyframes nebulaDrift1 {
   0%,100% { transform: translate(0,0) scale(1); }
   33%     { transform: translate(180px,120px) scale(1.18); }
@@ -607,7 +581,6 @@ body::before {
   0%   { opacity: .55; transform: translateY(0); }
   100% { opacity: 1;   transform: translateY(-12px); }
 }
-
 #product-canvas,
 #pricing-canvas {
   position: absolute !important;
@@ -622,7 +595,6 @@ body::before {
   position: relative;
   z-index: 2;
 }
-
 .features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -650,7 +622,6 @@ body::before {
 }
 .feat-card:hover::before { opacity: 1; }
 .feat-card:hover .feat-icon { transform: scale(1.08); }
-
 .feat-icon {
   width: 52px; height: 52px;
   border-radius: var(--r14);
@@ -675,7 +646,6 @@ body::before {
   line-height: 1.72;
   position: relative;
 }
-
 /* Integration strip */
 .int-bar {
   margin-top: 72px;
@@ -705,14 +675,11 @@ body::before {
   transition: all .22s;
 }
 .int-chip:hover { color: var(--blue); border-color: rgba(7,158,240,.28); background: rgba(7,158,240,.04); }
-
 /* ============================================================
    HOW IT WORKS
    ============================================================ */
 #how-it-works { background: var(--bg); }
-
 .steps-outer { max-width: 780px; margin: 0 auto; }
-
 .step {
   display: grid;
   grid-template-columns: 78px 1fr;
@@ -775,7 +742,6 @@ body::before {
   border-radius: 100px;
   margin-top: 12px;
 }
-
 /* Code window */
 .codewin {
   background: rgba(7,158,240,.035) !important;
@@ -814,12 +780,10 @@ body::before {
 .cs { color: #98d98e; }
 .cv { color: #f0c674; }
 .cn { color: var(--white); }
-
 /* ============================================================
    PRICING SECTION
    ============================================================ */
 #pricing { background: var(--bg2); }
-
 .pricing-def {
   max-width: 700px;
   margin: -24px auto 56px;
@@ -834,7 +798,6 @@ body::before {
   line-height: 1.65;
 }
 .pricing-def strong { color: var(--blue); }
-
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -842,7 +805,6 @@ body::before {
   max-width: 1080px;
   margin: 0 auto;
 }
-
 .pcard {
   background: var(--w04) !important;
   border: 1px solid var(--w06);
@@ -865,7 +827,6 @@ body::before {
 .pcard:hover { transform: translateY(-5px); border-color: var(--w10); }
 .pcard:hover::before { background: var(--grad); }
 .pcard:hover { box-shadow: 0 24px 60px rgba(0,0,0,.35); }
-
 .pcard.featured {
   background: rgba(7,158,240,.045) !important;
   border-color: rgba(7,158,240,.22);
@@ -873,7 +834,6 @@ body::before {
 }
 .pcard.featured::before { background: var(--grad); }
 .pcard.featured:hover { transform: translateY(-8px); }
-
 /* Popular badge */
 .pc-badge {
   position: absolute;
@@ -988,7 +948,6 @@ body::before {
   position: relative; overflow: hidden;
 }
 .pc-cta.grad:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(98,24,241,.32); }
-
 /* Implementation note */
 .impl-note {
   max-width: 1080px;
@@ -1020,12 +979,10 @@ body::before {
   border-radius: 4px;
   color: var(--blue);
 }
-
 /* ============================================================
    SECURITY SECTION
    ============================================================ */
 #security { background: var(--bg); }
-
 .sec-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1056,7 +1013,6 @@ body::before {
   transition: all .2s;
 }
 .cb:hover { border-color: rgba(7,158,240,.3); color: var(--blue); }
-
 .sec-right {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1077,12 +1033,10 @@ body::before {
 .sec-card-icon { margin-bottom: 14px; display: block; line-height: 1; }
 .sec-card h4 { font-family: var(--display); font-size: 13.5px; font-weight: 700; margin-bottom: 8px; }
 .sec-card p { font-size: 12.5px; color: var(--w40); line-height: 1.65; }
-
 /* ============================================================
    FAQ SECTION
    ============================================================ */
 #faq { background: var(--bg2); }
-
 .faq-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1149,7 +1103,6 @@ body::before {
   border-radius: 4px;
   color: var(--blue);
 }
-
 /* ============================================================
    CTA SECTION
    ============================================================ */
@@ -1178,7 +1131,6 @@ body::before {
 }
 .cta-p { font-size: 1.05rem; color: var(--w60); margin-bottom: 42px; }
 .cta-acts { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -1242,7 +1194,6 @@ footer {
   transition: all .22s;
 }
 .foot-soc:hover { border-color: var(--blue); color: var(--blue); background: rgba(7,158,240,.05); }
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -1277,7 +1228,6 @@ footer {
 </style>
 </head>
 <body>
-
 <!-- ============================================================
      NAVBAR
      ============================================================ -->
@@ -1287,7 +1237,6 @@ footer {
     <a href="#" class="nav-logo">
       <img src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/VeriLink%20Logo%20No%20Background.png" alt="VeriLink">
     </a>
-
     <!-- Center links -->
     <div class="nav-links">
       <a href="#product">Product</a>
@@ -1295,20 +1244,17 @@ footer {
       <a href="#security">Security</a>
       <a href="#faq">FAQ</a>
     </div>
-
     <!-- Right actions -->
     <div class="nav-actions">
       <a href="https://calendly.com/joseph-sack-veri-link/30min" target="_blank" rel="noopener" class="btn btn-ghost">Book a Meeting</a>
       <a href="#pricing" class="btn btn-grad">View Pricing</a>
     </div>
-
     <!-- Mobile hamburger -->
     <div class="hamburger" id="hbg" aria-label="Menu" role="button">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
-
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mmenu">
   <div class="mob-links">
@@ -1322,8 +1268,6 @@ footer {
     <a href="tel:919-244-3681" class="btn btn-ghost btn-lg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.27a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> 919-244-3681</a>
   </div>
 </div>
-
-
 <!-- ============================================================
      HERO
      ============================================================ -->
@@ -1332,7 +1276,6 @@ footer {
   <video id="hero-video" autoplay muted loop playsinline preload="auto">
     <source src="https://assets.cdn.filesafe.space/8Ys4ugT6TgghF4jHTr71/media/6a21e076f607d4002b81708b.mp4" type="video/mp4">
   </video>
-
   <!-- Main content -->
   <div class="hero-body">
     <!-- Badge -->
@@ -1340,23 +1283,24 @@ footer {
       <div class="pulse"></div>
       OpenID Connect (OIDC) Identity Provider
     </div>
-
     <!-- Headline -->
     <h1 class="hero-h1">
       Passwordless Auth<br>
       <span class="grad-text">Without the Complexity</span>
     </h1>
-
     <!-- Subheading -->
     <p class="hero-sub">
       VeriLink enables software platforms to implement passwordless authentication
-      and centralized identity management  usage based, secure, and built for scale.
+      and centralized identity management — usage based, secure, and built for scale.
     </p>
-
+    <!-- Audience clarifier: developer portal vs. end-user app -->
+    <p class="hero-audience-note">
+      Building an integration? Start at <a href="https://developers.veri-link.com/dev/login" target="_blank" rel="noopener">developers.veri-link.com</a> — already a customer signing in? Use the <a href="https://app.veri-link.com" target="_blank" rel="noopener">VeriLink end-user app</a>.
+    </p>
     <!-- CTAs -->
     <div class="hero-ctas">
       <a href="https://developers.veri-link.com/dev/login" class="btn btn-grad btn-lg">
-        Start Free  No Credit Card
+        Start Free — No Credit Card
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="#how-it-works" class="btn btn-outline-blue btn-lg">
@@ -1364,7 +1308,6 @@ footer {
         See How It Works
       </a>
     </div>
-
     <!-- Stats row -->
     <div class="hero-stats">
       <div class="hstat">
@@ -1388,42 +1331,39 @@ footer {
       </div>
     </div>
   </div>
-
   <!-- News Ticker (bottom of hero) -->
   <div class="news-ticker">
     <div class="ticker-tag">Highlights</div>
     <div class="ticker-track" id="tttrack">
       <!-- Set A -->
-      <div class="tick"><span class="tick-star">✦</span>Passwordless Magic Links  No Passwords Ever</div>
-      <div class="tick"><span class="tick-star">✦</span>100 Active Users Free  Developer Tier, Always</div>
+      <div class="tick"><span class="tick-star">✦</span>Passwordless Magic Links — No Passwords Ever</div>
+      <div class="tick"><span class="tick-star">✦</span>100 Active Users Free — Developer Tier, Always</div>
       <div class="tick"><span class="tick-star">✦</span>OpenID Connect (OIDC) Compliant Identity Provider</div>
-      <div class="tick"><span class="tick-star">✦</span>Usage-Based Pricing  Pay Only for Active Users</div>
+      <div class="tick"><span class="tick-star">✦</span>Usage-Based Pricing — Pay Only for Active Users</div>
       <div class="tick"><span class="tick-star">✦</span>Device Cookie Binding &amp; IP Bucket Enforcement</div>
       <div class="tick"><span class="tick-star">✦</span>OAuth / SSO Integration Support Out of the Box</div>
       <div class="tick"><span class="tick-star">✦</span>Dormant Accounts Cost Absolutely Nothing</div>
-      <div class="tick"><span class="tick-star">✦</span>Conditional MFA Policy Hooks  Smart Risk-Based Auth</div>
+      <div class="tick"><span class="tick-star">✦</span>Conditional MFA Policy Hooks — Smart Risk-Based Auth</div>
       <div class="tick"><span class="tick-star">✦</span>Stripe Metered Billing for SMB &amp; Enterprise Tiers</div>
-      <div class="tick"><span class="tick-star">✦</span>Audit Logs &amp; SIEM Export Hooks  Enterprise Ready</div>
+      <div class="tick"><span class="tick-star">✦</span>Audit Logs &amp; SIEM Export Hooks — Enterprise Ready</div>
       <div class="tick"><span class="tick-star">✦</span>Advanced Device Fingerprinting Signals</div>
       <div class="tick"><span class="tick-star">✦</span>Anti-Phishing Protection Built Into Every Link</div>
       <!-- Set B (duplicate for seamless loop) -->
-      <div class="tick"><span class="tick-star">✦</span>Passwordless Magic Links  No Passwords Ever</div>
-      <div class="tick"><span class="tick-star">✦</span>100 Active Users Free  Developer Tier, Always</div>
+      <div class="tick"><span class="tick-star">✦</span>Passwordless Magic Links — No Passwords Ever</div>
+      <div class="tick"><span class="tick-star">✦</span>100 Active Users Free — Developer Tier, Always</div>
       <div class="tick"><span class="tick-star">✦</span>OpenID Connect (OIDC) Compliant Identity Provider</div>
-      <div class="tick"><span class="tick-star">✦</span>Usage-Based Pricing  Pay Only for Active Users</div>
+      <div class="tick"><span class="tick-star">✦</span>Usage-Based Pricing — Pay Only for Active Users</div>
       <div class="tick"><span class="tick-star">✦</span>Device Cookie Binding &amp; IP Bucket Enforcement</div>
       <div class="tick"><span class="tick-star">✦</span>OAuth / SSO Integration Support Out of the Box</div>
       <div class="tick"><span class="tick-star">✦</span>Dormant Accounts Cost Absolutely Nothing</div>
-      <div class="tick"><span class="tick-star">✦</span>Conditional MFA Policy Hooks  Smart Risk-Based Auth</div>
+      <div class="tick"><span class="tick-star">✦</span>Conditional MFA Policy Hooks — Smart Risk-Based Auth</div>
       <div class="tick"><span class="tick-star">✦</span>Stripe Metered Billing for SMB &amp; Enterprise Tiers</div>
-      <div class="tick"><span class="tick-star">✦</span>Audit Logs &amp; SIEM Export Hooks  Enterprise Ready</div>
+      <div class="tick"><span class="tick-star">✦</span>Audit Logs &amp; SIEM Export Hooks — Enterprise Ready</div>
       <div class="tick"><span class="tick-star">✦</span>Advanced Device Fingerprinting Signals</div>
       <div class="tick"><span class="tick-star">✦</span>Anti-Phishing Protection Built Into Every Link</div>
     </div>
   </div>
 </section>
-
-
 <!-- ============================================================
      PRODUCT SECTION
      ============================================================ -->
@@ -1436,7 +1376,6 @@ footer {
       <h2 class="sec-h2">Everything You Need for<br><span class="grad-text">Modern Authentication</span></h2>
       <p class="sec-p">VeriLink replaces legacy password infrastructure with a zero-friction identity layer built natively for software platforms.</p>
     </div>
-
     <div class="features-grid">
       <div class="feat-card reveal" data-d="0">
         <div class="feat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
@@ -1469,7 +1408,6 @@ footer {
         <p class="feat-p">Trigger a second factor only when risk signals warrant it. Smart MFA that doesn't burden trusted users or miss high-risk authentication attempts.</p>
       </div>
     </div>
-
     <!-- Integration strip -->
     <div class="int-bar reveal">
       <p class="int-label">// Integrates with your existing stack</p>
@@ -1487,8 +1425,6 @@ footer {
     </div>
   </div>
 </section>
-
-
 <!-- ============================================================
      HOW IT WORKS
      ============================================================ -->
@@ -1497,9 +1433,8 @@ footer {
     <div class="sec-header reveal">
       <div class="tag-pill">How it Works</div>
       <h2 class="sec-h2">Email to Authenticated<br><span class="grad-text">in Four Steps</span></h2>
-      <p class="sec-p">No passwords. No friction. Just a link and a click  here's how VeriLink's magic link authentication flow works end to end.</p>
+      <p class="sec-p">No passwords. No friction. Just a link and a click — here's how VeriLink's magic link authentication flow works end to end.</p>
     </div>
-
     <div class="steps-outer">
       <!-- Step 1 -->
       <div class="step reveal">
@@ -1507,11 +1442,10 @@ footer {
         <div class="step-num">01</div>
         <div class="step-body">
           <h3>User Enters Their Email</h3>
-          <p>The user types their email into your platform's login form. No password field. No registration complexity. No friction  just an email address. That's the entire entry point.</p>
+          <p>The user types their email into your platform's login form. No password field. No registration complexity. No friction — just an email address. That's the entire entry point.</p>
           <span class="step-chip">Zero-friction entry</span>
         </div>
       </div>
-
       <!-- Step 2 -->
       <div class="step reveal">
         <div class="step-line"></div>
@@ -1522,29 +1456,26 @@ footer {
           <span class="step-chip">Encrypted · Single-use · Time-bound</span>
         </div>
       </div>
-
       <!-- Step 3 -->
       <div class="step reveal">
         <div class="step-line"></div>
         <div class="step-num">03</div>
         <div class="step-body">
           <h3>User Clicks the Link</h3>
-          <p>One click. VeriLink validates the token signature, checks device cookie signals and IP bucket rules, and verifies expiration  all within milliseconds. Suspicious signals trigger MFA or block the attempt entirely.</p>
+          <p>One click. VeriLink validates the token signature, checks device cookie signals and IP bucket rules, and verifies expiration — all within milliseconds. Suspicious signals trigger MFA or block the attempt entirely.</p>
           <span class="step-chip">Anti-phishing · Device validation · Risk signals</span>
         </div>
       </div>
-
       <!-- Step 4 -->
       <div class="step reveal">
         <div class="step-num">04</div>
         <div class="step-body">
           <h3>Instantly Logged In</h3>
-          <p>Authentication complete. VeriLink issues a session, binds it to the device cookie, and returns OIDC-compliant tokens to your platform. The user is authenticated  no password was ever touched, stored, or transmitted.</p>
+          <p>Authentication complete. VeriLink issues a session, binds it to the device cookie, and returns OIDC-compliant tokens to your platform. The user is authenticated — no password was ever touched, stored, or transmitted.</p>
           <span class="step-chip">OIDC token issued · Session bound</span>
         </div>
       </div>
     </div>
-
     <!-- Code window -->
     <div class="codewin reveal">
       <div class="cw-header">
@@ -1565,15 +1496,13 @@ footer {
         <div><span class="ck">await</span> verilink.<span class="cv">sendMagicLink</span>({ <span class="ck">email</span>: userEmail });</div>
         <div><span class="cc">// → Email dispatched with signed, expiring token</span></div>
         <div>&nbsp;</div>
-        <div><span class="cc">// 3. Validate on callback  device &amp; IP checks run automatically</span></div>
+        <div><span class="cc">// 3. Validate on callback — device &amp; IP checks run automatically</span></div>
         <div><span class="ck">const</span> <span class="cn">session</span> = <span class="ck">await</span> verilink.<span class="cv">verifyToken</span>(token);</div>
         <div><span class="cc">// → { userId, email, deviceBound: true, iat, exp, platform_id }</span></div>
       </div>
     </div>
   </div>
 </section>
-
-
 <!-- ============================================================
      PRICING SECTION  (MUST)
      ============================================================ -->
@@ -1586,16 +1515,13 @@ footer {
       <h2 class="sec-h2">Usage-Based Licensing for<br><span class="grad-text">Passwordless Auth</span></h2>
       <p class="sec-p">Pay for active authenticated users only. Dormant accounts cost nothing. No seat fees, no minimums, no surprises.</p>
     </div>
-
     <!-- Active user definition note -->
     <div class="pricing-def reveal">
       <strong>Active user definition:</strong> A unique end user who completes a VeriLink authentication
       at least once within a 30-day billing cycle. Dormant accounts cost <strong>$0</strong>.
     </div>
-
     <!-- Pricing cards -->
     <div class="pricing-grid">
-
       <!-- DEVELOPER (FREE) -->
       <div class="pcard reveal" data-d="0">
         <div class="pc-tier">Developer</div>
@@ -1617,7 +1543,6 @@ footer {
         <p class="pc-best"><strong>Best for:</strong> Pilots and early-stage validation</p>
         <a href="https://app.veri-link.com/register" class="pc-cta outline">Get Started Free</a>
       </div>
-
       <!-- SMB / SAAS (FEATURED) -->
       <div class="pcard featured reveal" data-d="1">
         <div class="pc-badge">Most Popular</div>
@@ -1640,7 +1565,6 @@ footer {
         </div>
         <a href="https://developers.veri-link.com/dev/login" class="pc-cta grad" style="margin-top: auto;">Start Growing</a>
       </div>
-
       <!-- ENTERPRISE -->
       <div class="pcard reveal" data-d="2">
         <div class="pc-tier">Enterprise</div>
@@ -1663,9 +1587,7 @@ footer {
         <p class="pc-best"><strong>Best for:</strong> Regulated and high-volume platforms</p>
         <a href="tel:919-244-3681" class="pc-cta outline">Contact Sales</a>
       </div>
-
     </div><!-- /pricing-grid -->
-
     <!-- Implementation note -->
     <div class="impl-note reveal">
       <h4 style="display:flex;align-items:center;gap:10px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Implementation Note</h4>
@@ -1679,23 +1601,19 @@ footer {
         Users who don't authenticate within a cycle incur no cost.
       </p>
     </div>
-
   </div>
 </section>
-
-
 <!-- ============================================================
      SECURITY SECTION
      ============================================================ -->
 <section class="section" id="security">
   <div class="container">
     <div class="sec-layout">
-
       <!-- Left copy -->
       <div class="sec-left reveal-l">
         <div class="tag-pill" style="margin-bottom: 20px;">Security</div>
         <h2>Built Secure.<br><span class="grad-text">By Default.</span></h2>
-        <p>VeriLink eliminates passwords at the protocol level  not just the UI. Every layer is hardened from the ground up, so your users stay protected without additional configuration complexity.</p>
+        <p>VeriLink eliminates passwords at the protocol level — not just the UI. Every layer is hardened from the ground up, so your users stay protected without additional configuration complexity.</p>
         <div class="compliance-badges">
           <div class="cb">OIDC</div>
           <div class="cb">OAuth 2.0</div>
@@ -1704,7 +1622,6 @@ footer {
           <div class="cb">TLS 1.3</div>
         </div>
       </div>
-
       <!-- Right cards -->
       <div class="sec-right reveal-r">
         <div class="sec-card">
@@ -1735,15 +1652,12 @@ footer {
         <div class="sec-card">
           <span class="sec-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
           <h4>Zero Password Surface</h4>
-          <p>No passwords means no credential stuffing, no brute force, no dictionary attacks  the entire attack surface is eliminated.</p>
+          <p>No passwords means no credential stuffing, no brute force, no dictionary attacks — the entire attack surface is eliminated.</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
-
 <!-- ============================================================
      FAQ SECTION
      ============================================================ -->
@@ -1754,54 +1668,46 @@ footer {
       <h2 class="sec-h2">Questions? <span class="grad-text">Answered.</span></h2>
       <p class="sec-p">Everything you need to know about VeriLink's authentication, pricing, and integration.</p>
     </div>
-
     <div class="faq-grid">
-
       <div class="faq-item reveal" data-d="0">
         <div class="faq-q">Is VeriLink secure for production?<div class="faq-ico">+</div></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. VeriLink is built on OIDC/OAuth 2.0 standards with PKCE. All tokens are cryptographically signed, time-limited, and single-use. The passwordless architecture eliminates credential-based attacks entirely  there are no passwords to steal, guess, or brute-force.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. VeriLink is built on OIDC/OAuth 2.0 standards with PKCE. All tokens are cryptographically signed, time-limited, and single-use. The passwordless architecture eliminates credential-based attacks entirely — there are no passwords to steal, guess, or brute-force.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="1">
         <div class="faq-q">What happens if the magic link expires?<div class="faq-ico">+</div></div>
-        <div class="faq-a"><div class="faq-a-inner">VeriLink returns an expiration error and your platform can prompt the user to request a fresh link. The flow is frictionless  users just re-enter their email and a new link is dispatched immediately. Expiration times are configurable per your security policy.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">VeriLink returns an expiration error and your platform can prompt the user to request a fresh link. The flow is frictionless — users just re-enter their email and a new link is dispatched immediately. Expiration times are configurable per your security policy.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="2">
         <div class="faq-q">Can I customize the magic link emails?<div class="faq-ico">+</div></div>
         <div class="faq-a"><div class="faq-a-inner">Yes. VeriLink supports custom email templates including your brand colors, logo, and copy. Enterprise plans include dedicated email domain configuration so magic links appear from your own domain rather than VeriLink's infrastructure.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="3">
         <div class="faq-q">How does usage based billing work?<div class="faq-ico">+</div></div>
-        <div class="faq-a"><div class="faq-a-inner">You're billed only for unique users who complete at least one authentication in a 30-day cycle. Dormant users cost nothing. Billing is processed via Stripe metered usage records. Your platform reports unique authenticated user counts  VeriLink never charges end users directly.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">You're billed only for unique users who complete at least one authentication in a 30-day cycle. Dormant users cost nothing. Billing is processed via Stripe metered usage records. Your platform reports unique authenticated user counts — VeriLink never charges end users directly.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="4">
         <div class="faq-q">What platforms does VeriLink integrate with?<div class="faq-ico">+</div></div>
-        <div class="faq-a"><div class="faq-a-inner">VeriLink is an OIDC-compliant provider, meaning it works with any platform or framework supporting OAuth 2.0 / OpenID Connect  Node.js, Python, Go, Ruby, Java, PHP, and most major frontend frameworks. Integration typically takes hours, not days.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">VeriLink is an OIDC-compliant provider, meaning it works with any platform or framework supporting OAuth 2.0 / OpenID Connect — Node.js, Python, Go, Ruby, Java, PHP, and most major frontend frameworks. Integration typically takes hours, not days.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="5">
         <div class="faq-q">How does conditional MFA work?<div class="faq-ico">+</div></div>
-        <div class="faq-a"><div class="faq-a-inner">VeriLink uses risk-signal-triggered MFA  a second factor is only requested when signals warrant it (new device, unusual IP, behavioral anomalies). Trusted users on recognized devices aren't prompted repeatedly, while high-risk attempts are always challenged.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">VeriLink uses risk-signal-triggered MFA — a second factor is only requested when signals warrant it (new device, unusual IP, behavioral anomalies). Trusted users on recognized devices aren't prompted repeatedly, while high-risk attempts are always challenged.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="6">
         <div class="faq-q">Is the Developer tier really free?<div class="faq-ico">+</div></div>
-        <div class="faq-a"><div class="faq-a-inner">Yes. The Developer tier is completely free for up to 100 active users per month with no credit card required. It includes the full core feature set  magic links, device cookie binding, IP enforcement, and dashboard visibility  so you can validate your integration before any commitment.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. The Developer tier is completely free for up to 100 active users per month with no credit card required. It includes the full core feature set — magic links, device cookie binding, IP enforcement, and dashboard visibility — so you can validate your integration before any commitment.</div></div>
       </div>
-
       <div class="faq-item reveal" data-d="7">
         <div class="faq-q">What exactly is an "active user"?<div class="faq-ico">+</div></div>
         <div class="faq-a"><div class="faq-a-inner">An active user is a unique end user who completes at least one VeriLink authentication within a 30-day billing cycle. If a user doesn't log in during a cycle, they incur zero cost. We recommend logging events with <code>platform_id</code> and <code>user_id_hash</code> for accurate aggregation.</div></div>
       </div>
-
+      <div class="faq-item reveal" data-d="8">
+        <div class="faq-q">Where do my end users actually sign in?<div class="faq-ico">+</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Once your platform is integrated, your end users authenticate through the <a href="https://app.veri-link.com" target="_blank" rel="noopener">VeriLink app</a> (app.veri-link.com) via the magic link flow. Developers building or managing the integration itself use the separate developer portal at <a href="https://developers.veri-link.com" target="_blank" rel="noopener">developers.veri-link.com</a>.</div></div>
+      </div>
     </div>
   </div>
 </section>
-
-
 <!-- ============================================================
      CTA SECTION
      ============================================================ -->
@@ -1819,8 +1725,6 @@ footer {
     </div>
   </div>
 </section>
-
-
 <!-- ============================================================
      FOOTER
      ============================================================ -->
@@ -1837,7 +1741,6 @@ footer {
           <a href="mailto:support@veri-link.com"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> &nbsp;support@veri-link.com</a>
         </div>
       </div>
-
       <!-- Product -->
       <div class="foot-col">
         <h5>Product</h5>
@@ -1846,9 +1749,10 @@ footer {
           <li><a href="#how-it-works">How it Works</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#security">Security</a></li>
+          <li><a href="https://app.veri-link.com" target="_blank" rel="noopener">End User App</a></li>
+          <li><a href="https://developers.veri-link.com" target="_blank" rel="noopener">Developer Portal</a></li>
         </ul>
       </div>
-
       <!-- Legal -->
       <div class="foot-col">
         <h5>Legal</h5>
@@ -1857,31 +1761,25 @@ footer {
         </ul>
       </div>
     </div>
-
     <div class="foot-bottom">
       <p>© 2025 VeriLink Inc. All rights reserved. &nbsp;·&nbsp; Primary Contact: Joseph Sack</p>
     </div>
   </div>
 </footer>
-
-
 <!-- ============================================================
      JAVASCRIPT
      ============================================================ -->
 <script>
 'use strict';
-
 /* ── Navbar scroll ─────────────────────────────── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 50);
 }, { passive: true });
-
 /* ── Mobile menu ───────────────────────────────── */
 const hbg   = document.getElementById('hbg');
 const mmenu = document.getElementById('mmenu');
 let mOpen = false;
-
 function toggleMenu(force) {
   mOpen = force !== undefined ? force : !mOpen;
   mmenu.classList.toggle('open', mOpen);
@@ -1895,13 +1793,10 @@ function toggleMenu(force) {
     sp[1].style.opacity   = '';
   }
 }
-
 hbg.addEventListener('click', () => toggleMenu());
-
 document.querySelectorAll('.ml, .mob-actions a').forEach(el => {
   el.addEventListener('click', () => toggleMenu(false));
 });
-
 /* ── Smooth scroll for anchor links ────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -1914,7 +1809,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
-
 /* ── Scroll-reveal (IntersectionObserver) ──────── */
 const ro = new IntersectionObserver(entries => {
   entries.forEach(en => {
@@ -1925,9 +1819,7 @@ const ro = new IntersectionObserver(entries => {
     ro.unobserve(el);
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -55px 0px' });
-
 document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-s').forEach(el => ro.observe(el));
-
 /* ── FAQ accordion ─────────────────────────────── */
 document.querySelectorAll('.faq-item').forEach(item => {
   const q     = item.querySelector('.faq-q');
@@ -1945,19 +1837,15 @@ document.querySelectorAll('.faq-item').forEach(item => {
     }
   });
 });
-
-
 /* ── Magical background animation (used by Product + Pricing) ──────────────── */
 function initMagicalCanvas(canvasId) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let W, H, stars = [], orbs = [], streaks = [];
-
   const BLUE   = '7,158,240';
   const PURPLE = '162,98,255';
   const PINK   = '210,120,255';
-
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = canvas.offsetWidth;
@@ -1966,8 +1854,7 @@ function initMagicalCanvas(canvasId) {
     canvas.height = H * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
-
-  /* Twinkling stars  small glowing dots that pulse */
+  /* Twinkling stars — small glowing dots that pulse */
   class Star {
     constructor() { this.init(true); }
     init(initial) {
@@ -2010,8 +1897,7 @@ function initMagicalCanvas(canvasId) {
       ctx.fill();
     }
   }
-
-  /* Slow-drifting glow orbs  the big soft lights */
+  /* Slow-drifting glow orbs — the big soft lights */
   class Orb {
     constructor() { this.init(); }
     init() {
@@ -2047,7 +1933,6 @@ function initMagicalCanvas(canvasId) {
       ctx.fill();
     }
   }
-
   /* Rare shooting light streaks */
   class Streak {
     constructor() {
@@ -2104,40 +1989,33 @@ function initMagicalCanvas(canvasId) {
              this.y < -80 || this.y > H + 80;
     }
   }
-
   function build() {
     const n = Math.min(Math.floor((W * H) / 5500), 130);
     stars = Array.from({ length: n }, () => new Star());
     const o = Math.min(Math.floor((W * H) / 55000), 8);
     orbs  = Array.from({ length: o }, () => new Orb());
   }
-
   function loop() {
     ctx.clearRect(0, 0, W, H);
-    // additive blending  magical bloom feel
+    // additive blending — magical bloom feel
     ctx.globalCompositeOperation = 'lighter';
-
     orbs.forEach(o => { o.step(); o.draw(); });
     stars.forEach(s => { s.step(); s.draw(); });
-
     // occasional streak
     if (Math.random() < .006 && streaks.length < 2) {
       streaks.push(new Streak());
     }
     streaks = streaks.filter(s => !s.dead());
     streaks.forEach(s => { s.step(); s.draw(); });
-
     ctx.globalCompositeOperation = 'source-over';
     requestAnimationFrame(loop);
   }
-
   const obs = new ResizeObserver(() => { resize(); build(); });
   obs.observe(canvas.parentElement);
   resize();
   build();
   loop();
 }
-
 initMagicalCanvas('product-canvas');
 initMagicalCanvas('pricing-canvas');
 </script>
@@ -2201,20 +2079,16 @@ initMagicalCanvas('pricing-canvas');
 (function () {
   // --- Set this to your deployed Railway URL ---
   var CHAT_ENDPOINT = "https://verilink-chat-production.up.railway.app/chat";
-
   var root = document.getElementById("vl-chat-root");
   var history = [];
-
   // Founder photo, used in both the launcher and the header.
   var VL_AVATAR =
     '<img src="https://raw.githubusercontent.com/Smarttechsolutionllc/branding-assets/main/founder.png" ' +
     'alt="VeriLink founder" style="width:100%;height:100%;object-fit:cover;display:block;" />';
-
   var launcher = document.createElement("button");
   launcher.id = "vl-launcher";
   launcher.setAttribute("aria-label", "Open chat");
   launcher.innerHTML = VL_AVATAR;
-
   var panel = document.createElement("div");
   panel.id = "vl-panel";
   panel.setAttribute("role", "dialog");
@@ -2232,14 +2106,11 @@ initMagicalCanvas('pricing-canvas');
       '<input id="vl-input" type="text" placeholder="Ask a question..." autocomplete="off" />' +
       '<button id="vl-send">Send</button>' +
     '</div>';
-
   root.appendChild(launcher);
   root.appendChild(panel);
-
   var messagesEl = panel.querySelector("#vl-messages");
   var inputEl = panel.querySelector("#vl-input");
   var sendEl = panel.querySelector("#vl-send");
-
   function addMessage(role, text) {
     var div = document.createElement("div");
     div.className = "vl-msg " + (role === "user" ? "vl-user" : "vl-bot");
@@ -2248,7 +2119,6 @@ initMagicalCanvas('pricing-canvas');
     messagesEl.scrollTop = messagesEl.scrollHeight;
     return div;
   }
-
   var greeted = false;
   launcher.addEventListener("click", function () {
     var open = panel.classList.toggle("vl-open");
@@ -2261,17 +2131,14 @@ initMagicalCanvas('pricing-canvas');
       inputEl.focus();
     }
   });
-
   function send() {
     var text = inputEl.value.trim();
     if (!text) return;
     inputEl.value = "";
     addMessage("user", text);
     history.push({ role: "user", content: text });
-
     sendEl.disabled = true;
     var thinking = addMessage("bot", "...");
-
     fetch(CHAT_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -2292,7 +2159,6 @@ initMagicalCanvas('pricing-canvas');
         messagesEl.scrollTop = messagesEl.scrollHeight;
       });
   }
-
   sendEl.addEventListener("click", send);
   inputEl.addEventListener("keydown", function (e) {
     if (e.key === "Enter") send();
