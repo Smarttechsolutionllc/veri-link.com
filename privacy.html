@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://veri-link.com/terms.html" />
-<title>Service &amp; Acceptable Use Agreement | VeriLink</title>
-<meta name="description" content="VeriLink Inc. Service and Acceptable Use Agreement — effective April 13, 2026.">
+<link rel="canonical" href="https://veri-link.com/privacy.html" />
+<title>Privacy Policy | VeriLink</title>
+<meta name="description" content="VeriLink Inc. Privacy Policy — how we collect, use, and protect data across our passwordless authentication platform. Effective April 13, 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -685,7 +685,7 @@ footer {
 
     <div class="legal-header reveal">
       <div class="pill"><span class="dot"></span> Legal Document</div>
-      <h1>Service &amp; <span class="grad-text">Acceptable Use Agreement</span></h1>
+      <h1>Privacy <span class="grad-text">Policy</span></h1>
       <div class="meta">
         <span>Effective Date: April 13, 2026</span>
         <span class="sep">|</span>
@@ -696,167 +696,133 @@ footer {
     </div>
 
     <div class="legal-intro reveal">
-      This Service and Acceptable Use Agreement ("Agreement") is entered into between <strong>VeriLink Inc.</strong>, a North Carolina corporation ("VeriLink", "we", "us", or "our"), and the entity or individual accessing or using the VeriLink platform ("Customer", "you", or "your"). By activating an account, accessing the VeriLink API, or integrating VeriLink services into any product or platform, you agree to be bound by this Agreement in full.
+      This Privacy Policy describes how <strong>VeriLink Inc.</strong>, a North Carolina corporation ("VeriLink", "we", "us", or "our"), collects, uses, discloses, and safeguards information in connection with the VeriLink passwordless authentication platform (the "Service"). This Policy applies to Customers who register for a VeriLink account and, where applicable, to End Users who authenticate through the Service via a Customer's integration. By accessing or using the Service, you agree to the collection and use of information as described in this Policy.
     </div>
 
-    <!-- 1. Definitions -->
-    <div class="legal-section reveal" id="definitions">
-      <h2>1. Definitions</h2>
+    <!-- 1. Information We Collect -->
+    <div class="legal-section reveal" id="collect">
+      <h2>1. Information We Collect</h2>
+      <p>VeriLink collects information necessary to provide passwordless authentication and identity management services. The categories of information we process include:</p>
       <table class="def-table">
         <tbody>
           <tr>
-            <td>1.1 &ldquo;Service&rdquo;</td>
-            <td>The VeriLink passwordless authentication platform, including all APIs, SDKs, dashboard interfaces, documentation, and associated infrastructure provided by VeriLink Inc.</td>
+            <td>Account Data</td>
+            <td>Name, business email address, company name, billing information, and API credentials provided when a Customer registers for VeriLink.</td>
           </tr>
           <tr>
-            <td>1.2 &ldquo;Customer&rdquo;</td>
-            <td>Any developer, organization, business entity, or individual that registers for and uses the Service under a VeriLink account.</td>
+            <td>Authentication Data</td>
+            <td>Cryptographic public keys, device identifiers, and authentication event metadata (timestamp, success/failure, device type) generated when an End User authenticates through a Customer's integration.</td>
           </tr>
           <tr>
-            <td>1.3 &ldquo;End User&rdquo;</td>
-            <td>Any individual who authenticates through the Service as a result of a Customer's integration. End Users do not have a direct contractual relationship with VeriLink.</td>
+            <td>Usage Data</td>
+            <td>API request logs, dashboard activity, IP address, browser type, and general usage patterns collected to operate, secure, and improve the Service.</td>
           </tr>
           <tr>
-            <td>1.4 &ldquo;Active User&rdquo;</td>
-            <td>A unique End User who completes at least one VeriLink authentication event within a given 30-day billing cycle.</td>
-          </tr>
-          <tr>
-            <td>1.5 &ldquo;Integration&rdquo;</td>
-            <td>The technical embedding or connection of the Service into a Customer's own application, platform, or product.</td>
-          </tr>
-          <tr>
-            <td>1.6 &ldquo;Resell&rdquo;</td>
-            <td>Any act of charging, invoicing, billing, or otherwise transferring the cost of VeriLink services as a discrete, identifiable fee to any third party, including End Users.</td>
+            <td>Communications</td>
+            <td>Information provided when contacting support, scheduling a meeting, or otherwise communicating with VeriLink.</td>
           </tr>
         </tbody>
       </table>
+      <p>VeriLink's passwordless authentication architecture is designed so that we do not collect or store End User passwords. Authentication relies on public-key cryptography bound to an End User's device rather than a shared secret transmitted to or stored by VeriLink.</p>
     </div>
 
-    <!-- 2. License Grant -->
-    <div class="legal-section reveal" id="license">
-      <h2>2. License Grant</h2>
-      <p>Subject to the terms of this Agreement and payment of applicable fees, VeriLink grants the Customer a limited, non-exclusive, non-transferable, non-sublicensable license to access and use the Service solely for the purpose of integrating passwordless authentication into Customer's own products or services for the benefit of Customer's End Users. This license does not permit resale, sublicensing, or any use of the Service as a standalone offering made available to third parties.</p>
-    </div>
-
-    <!-- 3. Prohibited Uses -->
-    <div class="legal-section reveal" id="aup">
-      <h2>3. Prohibited Uses and Acceptable Use Policy</h2>
-
-      <h3>3.1 Prohibition on End-User Billing</h3>
-      <div class="callout">
-        Customers are expressly prohibited from charging, invoicing, or billing their End Users any separate, discrete, or itemized fee specifically for access to or use of VeriLink authentication services. VeriLink may only be used as an integrated, embedded component of Customer's own product or service offering.
-      </div>
-      <p>For the avoidance of doubt, this prohibition applies to but is not limited to: (a) line-item charges on invoices or receipts referencing VeriLink, authentication, or login services; (b) per-user or per-authentication fees passed directly to End Users; (c) add-on pricing tiers marketed to End Users that are funded by or derived from VeriLink usage costs; and (d) any resale, white-labeling, or repackaging of the Service as a standalone authentication product.</p>
-      <p>Nothing in this section prohibits a Customer from adjusting their own product pricing generally, provided that such pricing is not explicitly tied to or derived from VeriLink authentication usage as a discrete billable unit.</p>
-
-      <h3>3.2 Additional Prohibited Activities</h3>
+    <!-- 2. How We Use Information -->
+    <div class="legal-section reveal" id="use">
+      <h2>2. How We Use Information</h2>
+      <p>We use the information described above for the following purposes:</p>
       <ul class="legal-list">
-        <li>Attempting to reverse engineer, decompile, or extract source code from the Service.</li>
-        <li>Using the Service to authenticate users on behalf of a competitor to VeriLink without prior written consent.</li>
-        <li>Sharing API keys, credentials, or account access with unauthorized third parties.</li>
-        <li>Using the Service in any manner that violates applicable law, regulation, or third-party rights.</li>
-        <li>Submitting fraudulent, synthetic, or bot-generated authentication events to manipulate billing.</li>
-        <li>Removing, obscuring, or altering any VeriLink branding, attribution, or notices where required.</li>
-        <li>Using the Service to facilitate unauthorized access to systems, data exfiltration, or any malicious activity.</li>
+        <li>To provide, operate, and maintain the Service, including processing authentication events in real time.</li>
+        <li>To calculate Active User counts and generate accurate, metered billing.</li>
+        <li>To detect, investigate, and prevent fraud, abuse, and security incidents.</li>
+        <li>To communicate with Customers about their account, service updates, and support requests.</li>
+        <li>To improve the reliability, performance, and functionality of the Service.</li>
+        <li>To comply with applicable law, legal process, and enforceable governmental requests.</li>
+      </ul>
+      <p>VeriLink does not use End User authentication data for advertising purposes and does not build behavioral advertising profiles from data processed through the Service.</p>
+    </div>
+
+    <!-- 3. How We Share Information -->
+    <div class="legal-section reveal" id="sharing">
+      <h2>3. How We Share Information</h2>
+      <div class="callout">
+        VeriLink does not sell personal information. We do not share End User data with third parties for their own independent marketing purposes.
+      </div>
+      <p>We may share information in the following limited circumstances:</p>
+      <ul class="legal-list">
+        <li><strong>Service Providers.</strong> With vetted subprocessors who perform functions on our behalf, such as cloud hosting, payment processing (Stripe), and analytics, under contractual confidentiality and data protection obligations.</li>
+        <li><strong>Customers.</strong> Authentication event data and Active User metrics are made available to the Customer whose integration generated the event, as necessary for them to operate their own product.</li>
+        <li><strong>Legal Requirements.</strong> Where required to comply with applicable law, regulation, legal process, or a valid governmental request.</li>
+        <li><strong>Business Transfers.</strong> In connection with a merger, acquisition, financing, or sale of assets, subject to standard confidentiality protections.</li>
+        <li><strong>With Consent.</strong> Where a Customer or End User has otherwise directed or consented to the sharing.</li>
       </ul>
     </div>
 
-    <!-- 4. Billing -->
-    <div class="legal-section reveal" id="billing">
-      <h2>4. Billing and Payment Terms</h2>
-      <p>VeriLink charges Customers based on Monthly Active Users (MAU) as defined in Section 1.4. Billing is processed through Stripe using metered usage records submitted by VeriLink at the close of each 30-day billing cycle. Dormant accounts that do not complete an authentication event within a billing cycle are not counted as Active Users and incur no charge.</p>
-      <p>Current pricing tiers are published at <a href="pricing.html">veri-link.com/pricing.html</a> and may be updated by VeriLink with thirty (30) days written notice to the Customer. Continued use of the Service following a pricing change constitutes acceptance of the revised rates. All fees are non-refundable except where required by applicable law or expressly stated otherwise in writing by VeriLink.</p>
+    <!-- 4. Data Retention -->
+    <div class="legal-section reveal" id="retention">
+      <h2>4. Data Retention</h2>
+      <p>VeriLink retains Account Data for as long as the Customer maintains an active account and for a reasonable period thereafter to comply with legal, tax, and accounting obligations. Authentication event logs are retained for the period necessary to provide the Service, support billing accuracy, and investigate security incidents, after which they are deleted or anonymized in accordance with our internal data retention schedule. Customers may request deletion of their account data by contacting <a href="mailto:support@veri-link.com">support@veri-link.com</a>, subject to any retention required by law.</p>
     </div>
 
-    <!-- 5. Enforcement -->
-    <div class="legal-section reveal" id="enforcement">
-      <h2>5. Enforcement and Remedies</h2>
-
-      <h3>5.1 Violation Detection</h3>
-      <p>VeriLink reserves the right to monitor account activity, review Customer integrations, and investigate reports of potential violations of this Agreement. Monitoring may include review of API usage patterns, authentication event logs, and any publicly available information about Customer's product or pricing structure.</p>
-
-      <h3>5.2 Enforcement Process</h3>
-      <p>Upon identification of a suspected violation, VeriLink will follow the escalation process below:</p>
-      <div class="steps">
-        <div class="step-row">
-          <div class="step-label">Step 1: Written Notice</div>
-          <div class="step-desc">VeriLink will notify the Customer in writing via the registered account email, describing the suspected violation and requesting a written response within seven (7) business days.</div>
-        </div>
-        <div class="step-row">
-          <div class="step-label">Step 2: Suspension</div>
-          <div class="step-desc">If no satisfactory response is received, or if the violation is confirmed, VeriLink may suspend Customer's account and API access pending resolution. VeriLink will provide forty-eight (48) hours notice prior to suspension except in cases of material or repeated violation.</div>
-        </div>
-        <div class="step-row">
-          <div class="step-label">Step 3: Termination</div>
-          <div class="step-desc">If the violation is not remediated within thirty (30) days of the initial notice, or if the Customer refuses to cure the violation, VeriLink may terminate the Customer's account and this Agreement immediately and without further obligation.</div>
-        </div>
-      </div>
-
-      <h3>5.3 Immediate Termination</h3>
-      <p>Notwithstanding Section 5.2, VeriLink reserves the right to immediately suspend or terminate any account without prior notice in cases involving: (a) repeated violations following a prior warning; (b) deliberate or bad-faith non-compliance; (c) use of the Service in connection with illegal activity; or (d) any action that poses a material risk to VeriLink's infrastructure, reputation, or other customers.</p>
+    <!-- 5. Data Security -->
+    <div class="legal-section reveal" id="security">
+      <h2>5. Data Security</h2>
+      <p>VeriLink implements administrative, technical, and physical safeguards designed to protect information against unauthorized access, disclosure, alteration, and destruction. These measures include encryption of data in transit and at rest, role-based access controls, network segmentation, and continuous monitoring of authentication infrastructure. No method of transmission or storage is completely secure, and VeriLink cannot guarantee absolute security. Any suspected security incident should be reported immediately to <a href="mailto:support@veri-link.com">support@veri-link.com</a>.</p>
     </div>
 
-    <!-- 6. Data and Privacy -->
-    <div class="legal-section reveal" id="privacy">
-      <h2>6. Data and Privacy</h2>
-      <p>VeriLink processes authentication event data solely to provide the Service and does not sell, license, or share End User data with third parties except as required by law. Customers are responsible for ensuring their use of the Service complies with all applicable privacy laws, including but not limited to GDPR, CCPA, and HIPAA where applicable. Customers must maintain their own privacy policy disclosing the use of third-party authentication infrastructure to their End Users. VeriLink's Privacy Policy, available at <a href="/">veri-link.com</a>, is incorporated into this Agreement by reference.</p>
+    <!-- 6. International Data Transfers -->
+    <div class="legal-section reveal" id="transfers">
+      <h2>6. International Data Transfers</h2>
+      <p>VeriLink is based in the United States, and information we collect may be processed and stored in the United States or other jurisdictions in which VeriLink or its service providers operate. Where information is transferred internationally, VeriLink takes steps designed to ensure it receives an adequate level of protection consistent with applicable data protection laws, including the use of standard contractual clauses where required.</p>
     </div>
 
-    <!-- 7. Intellectual Property -->
-    <div class="legal-section reveal" id="ip">
-      <h2>7. Intellectual Property</h2>
-      <p>VeriLink retains all right, title, and interest in and to the Service, including all underlying technology, algorithms, APIs, trademarks, and documentation. This Agreement does not convey any ownership interest in the Service to the Customer. Customer retains all right, title, and interest in their own applications and products into which the Service is integrated.</p>
+    <!-- 7. Your Privacy Rights -->
+    <div class="legal-section reveal" id="rights">
+      <h2>7. Your Privacy Rights</h2>
+      <p>Depending on your jurisdiction, you may have certain rights with respect to your personal information, including the right to:</p>
+      <ul class="legal-list">
+        <li>Request access to the personal information VeriLink holds about you.</li>
+        <li>Request correction of inaccurate or incomplete information.</li>
+        <li>Request deletion of your personal information, subject to legal retention requirements.</li>
+        <li>Object to or restrict certain processing of your information.</li>
+        <li>Request a copy of your information in a portable format.</li>
+        <li>Withdraw consent where processing is based on consent.</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:support@veri-link.com">support@veri-link.com</a>. Because End Users authenticate through a Customer's own product and do not hold a direct account with VeriLink, End User requests regarding their personal information should generally be directed to the applicable Customer in the first instance; VeriLink will assist Customers in responding to such requests as required by applicable law.</p>
     </div>
 
-    <!-- 8. Disclaimers -->
-    <div class="legal-section reveal" id="disclaimers">
-      <h2>8. Disclaimers and Limitation of Liability</h2>
-      <div class="caps">
-        THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. VERILINK DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF SECURITY VULNERABILITIES.
-        <br/><br/>
-        TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, VERILINK'S TOTAL CUMULATIVE LIABILITY TO CUSTOMER FOR ANY CLAIMS ARISING UNDER OR RELATED TO THIS AGREEMENT SHALL NOT EXCEED THE TOTAL FEES PAID BY CUSTOMER TO VERILINK IN THE THREE (3) MONTHS PRECEDING THE CLAIM. IN NO EVENT SHALL VERILINK BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES.
-      </div>
+    <!-- 8. Cookies and Tracking Technologies -->
+    <div class="legal-section reveal" id="cookies">
+      <h2>8. Cookies and Tracking Technologies</h2>
+      <p>The VeriLink website and dashboard use cookies and similar technologies to maintain sessions, remember preferences, and understand aggregate usage of our site. These may include analytics tools that help us understand how visitors interact with veri-link.com. You can control cookies through your browser settings; disabling cookies may affect the functionality of the dashboard.</p>
     </div>
 
-    <!-- 9. Governing Law -->
-    <div class="legal-section reveal" id="governing-law">
-      <h2>9. Governing Law and Dispute Resolution</h2>
-      <p>This Agreement shall be governed by and construed in accordance with the laws of the State of North Carolina, without regard to its conflict of law principles. Any dispute arising out of or relating to this Agreement shall first be submitted to good-faith negotiation between the parties. If unresolved within thirty (30) days, disputes shall be submitted to binding arbitration administered in Wake County, North Carolina under the rules of the American Arbitration Association. Notwithstanding the foregoing, either party may seek injunctive or equitable relief in any court of competent jurisdiction to prevent irreparable harm.</p>
+    <!-- 9. Children's Privacy -->
+    <div class="legal-section reveal" id="children">
+      <h2>9. Children's Privacy</h2>
+      <p>The Service is intended for business use by Customers and their End Users in a commercial context and is not directed to children under the age of 16. VeriLink does not knowingly collect personal information from children. If we become aware that we have inadvertently collected such information, we will take reasonable steps to delete it.</p>
     </div>
 
-    <!-- 10. Modifications -->
-    <div class="legal-section reveal" id="modifications">
-      <h2>10. Modifications to this Agreement</h2>
-      <p>VeriLink reserves the right to modify this Agreement at any time. Customers will be notified of material changes via the registered account email address at least thirty (30) days prior to the effective date of the change. Continued use of the Service following the effective date constitutes acceptance of the modified Agreement. If Customer does not agree to the modified terms, Customer must discontinue use of the Service and notify VeriLink in writing.</p>
+    <!-- 10. Changes to this Policy -->
+    <div class="legal-section reveal" id="changes">
+      <h2>10. Changes to this Policy</h2>
+      <p>VeriLink may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. Material changes will be communicated to Customers via the registered account email address, and the "Effective Date" at the top of this Policy will be updated accordingly. Continued use of the Service following such changes constitutes acceptance of the updated Policy.</p>
     </div>
 
-    <!-- 11. General Provisions -->
-    <div class="legal-section reveal" id="general">
-      <h2>11. General Provisions</h2>
+    <!-- 11. Contact Us -->
+    <div class="legal-section reveal" id="contact">
+      <h2>11. Contact Us</h2>
       <dl class="provision-list">
         <div>
-          <dt>Entire Agreement</dt>
-          <dd>This Agreement constitutes the entire agreement between the parties with respect to the Service and supersedes all prior agreements, representations, and understandings.</dd>
+          <dt>Data Controller</dt>
+          <dd>VeriLink Inc., incorporated in North Carolina, is the data controller for information collected in connection with the Service.</dd>
         </div>
         <div>
-          <dt>Severability</dt>
-          <dd>If any provision of this Agreement is found to be unenforceable, the remaining provisions shall continue in full force and effect.</dd>
+          <dt>Questions or Requests</dt>
+          <dd>For any questions about this Privacy Policy or to exercise your privacy rights, contact us at <a href="mailto:support@veri-link.com">support@veri-link.com</a> or <a href="tel:984-386-4340">984-386-4340</a>.</dd>
         </div>
         <div>
-          <dt>Waiver</dt>
-          <dd>Failure by VeriLink to enforce any provision of this Agreement shall not constitute a waiver of VeriLink's right to enforce such provision in the future.</dd>
-        </div>
-        <div>
-          <dt>Assignment</dt>
-          <dd>Customer may not assign or transfer this Agreement or any rights hereunder without VeriLink's prior written consent. VeriLink may assign this Agreement in connection with a merger, acquisition, or sale of substantially all assets.</dd>
-        </div>
-        <div>
-          <dt>Notices</dt>
-          <dd>All notices under this Agreement shall be sent to the Customer's registered account email and to <a href="mailto:support@veri-link.com">support@veri-link.com</a> for notices to VeriLink.</dd>
-        </div>
-        <div>
-          <dt>Independent Contractors</dt>
-          <dd>The parties are independent contractors. Nothing in this Agreement creates a partnership, joint venture, agency, or employment relationship between the parties.</dd>
+          <dt>Related Documents</dt>
+          <dd>This Privacy Policy should be read together with VeriLink's <a href="terms.html">Service &amp; Acceptable Use Agreement</a>, which is incorporated by reference into the Customer relationship.</dd>
         </div>
       </dl>
     </div>
